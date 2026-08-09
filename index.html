@@ -287,7 +287,7 @@ footer{margin-top:44px;text-align:center;font-size:11.5px;color:#A8A2B8;}
 <body><div class="wrap">
 <header class="bar">
 <div class="barin">
-<span class="logo">ツクヨム</span>
+<span class="logo" id="logoBtn" role="button" tabindex="0" title="トップに戻る">ツクヨム</span>
 <input id="q" type="search" placeholder="🔍 作品名・あらすじ・タグで検索">
 <div class="seg pconly" id="viewSeg"></div>
 <button class="ib mobonly" id="viewBtn" title="本棚と一覧の切替" aria-label="本棚と一覧の切替">▦</button>
@@ -299,7 +299,7 @@ footer{margin-top:44px;text-align:center;font-size:11.5px;color:#A8A2B8;}
 <div class="nowfil" id="nowfil" hidden></div>
 </header>
 <div id="cards"></div>
-<footer>ツクヨム · 全163作品 · 最終更新 2026-08-09 12:58</footer>
+<footer>ツクヨム · 全163作品 · 最終更新 2026-08-10 08:38</footer>
 </div>
 <!-- ヨムちゃんの絵の供給元。ヘッダーの大きなマスコットは廃止したので、
      画像はここに1枚だけ置いて #yom が使い回す（HTMLに二重に埋めない） -->
@@ -1162,6 +1162,16 @@ document.getElementById('newBtn').onclick=()=>openSheet('new');
 document.getElementById('newBtnM').onclick=()=>openSheet('new');
 document.getElementById('aboutBtn').onclick=()=>
   (panelEl().dataset.kind==='about'&&document.body.classList.contains('open'))?closePanel():openSheet('about');
+/* ロゴ＝トップへ戻る。絞り込んだ後に元へ戻す手段が無かったため（2026-08-09） */
+(function(){
+  const go=()=>{activeStatus=null;activeCat=null;query='';
+    const q=document.getElementById('q'); if(q) q.value='';
+    closePanel(); render(); scrollTo({top:0,behavior:'smooth'});};
+  const el=document.getElementById('logoBtn');
+  if(el){ el.style.cursor='pointer';
+    el.onclick=go;
+    el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; }
+})();
 document.getElementById('viewBtn').onclick=()=>setView(viewMode==='shelf'?'list':'shelf');
 // マスコットの絵は隠しスロットの1枚を使い回す（4.9MBのHTMLに画像を二重に埋めない）
 (function(){
