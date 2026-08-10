@@ -254,6 +254,9 @@ body.open #yom .yfloat,body.open #yom .ytilt,body.open #yom .ysh{animation:none;
 #yom .ybub{position:absolute;right:0;bottom:calc(var(--yw) + 14px);
   width:min(310px,calc(100vw - 32px));background:#fff;border:2px solid var(--ink);border-radius:14px;
   padding:12px;box-shadow:0 14px 30px rgba(46,42,61,.2);}
+#yom .ybub .ybx{position:absolute;top:8px;right:8px;width:24px;height:24px;font-size:13px;
+  border-radius:7px;padding:0;line-height:1;}
+#yom .ybub .ybt{padding-right:28px;}
 #yom:not(.yopen) .ybub{display:none;}
 #yom .ybub::after{content:"";position:absolute;right:26px;bottom:-9px;width:14px;height:14px;
   background:#fff;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);
@@ -308,7 +311,7 @@ footer{margin-top:44px;text-align:center;font-size:11.5px;color:#A8A2B8;}
 <div class="nowfil" id="nowfil" hidden></div>
 </header>
 <div id="cards"></div>
-<footer>ツクヨム · 全166作品 · 最終更新 2026-08-10 22:23</footer>
+<footer>ツクヨム · 全166作品 · 最終更新 2026-08-10 22:30</footer>
 </div>
 <!-- ヨムちゃんの絵の供給元。ヘッダーの大きなマスコットは廃止したので、
      画像はここに1枚だけ置いて #yom が使い回す（HTMLに二重に埋めない） -->
@@ -1192,12 +1195,14 @@ document.getElementById('viewBtn').onclick=()=>setView(viewMode==='shelf'?'list'
     +'<span class="ysh"></span>'
     +'<button class="ycall" type="button">📖 ヨムちゃんを呼ぶ</button>'
     +'<div class="ybub" role="dialog" aria-label="ヨムちゃんに聞く">'
+      +'<button class="pclose ybx" type="button" aria-label="閉じる">×</button>'
       +'<div class="ybt">やりたいことを一言でどうぞ。棚から探します</div>'
       +'<input class="yq" type="search" placeholder="例: 録音した音を編集したい">'
       +'<div class="yres"></div></div>';
   const im=y.querySelector('img');
   if(im.complete) yomFit(im); else im.addEventListener('load',()=>yomFit(im));
   y.querySelector('.ybtn').onclick=()=>yomToggle();
+  y.querySelector('.ybx').onclick=e=>{e.stopPropagation();yomToggle(false);};
   y.querySelector('.ycall').onclick=()=>yomShow(true);
   y.querySelector('.yq').addEventListener('input',yomAnswer);
   y.querySelector('.yq').addEventListener('keydown',e=>{if(e.key==='Escape')yomToggle(false);});
