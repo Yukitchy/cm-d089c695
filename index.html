@@ -238,10 +238,6 @@ body.open #scrim{opacity:1;pointer-events:auto;}
 /* パネルを開いている間＝端に寄って、小さく静かになる */
 body.open #yom{--yw:64px;}
 body.open #yom .yfloat,body.open #yom .ytilt,body.open #yom .ysh{animation:none;}
-#yom .yx{position:absolute;right:-2px;top:-2px;width:22px;height:22px;border-radius:50%;
-  border:1.5px solid var(--line);background:#fff;color:var(--sub);font-size:13px;line-height:1;
-  cursor:pointer;padding:0;font-family:inherit;}
-#yom .yx:hover{border-color:var(--acc);color:var(--acc);}
 #yom .ycall{display:none;border:2px solid var(--ink);background:#fff;border-radius:999px;
   font-size:12px;font-weight:800;font-family:inherit;color:var(--ink);padding:7px 12px;cursor:pointer;}
 #yom.off{width:auto;}
@@ -305,7 +301,7 @@ footer{margin-top:44px;text-align:center;font-size:11.5px;color:#A8A2B8;}
 <div class="nowfil" id="nowfil" hidden></div>
 </header>
 <div id="cards"></div>
-<footer>ツクヨム · 全165作品 · 最終更新 2026-08-10 22:11</footer>
+<footer>ツクヨム · 全165作品 · 最終更新 2026-08-10 22:13</footer>
 </div>
 <!-- ヨムちゃんの絵の供給元。ヘッダーの大きなマスコットは廃止したので、
      画像はここに1枚だけ置いて #yom が使い回す（HTMLに二重に埋めない） -->
@@ -1187,7 +1183,6 @@ document.getElementById('viewBtn').onclick=()=>setView(viewMode==='shelf'?'list'
       +'<span class="yfloat"><span class="ytilt">'
       +'<img alt="" aria-hidden="true" src="'+m.getAttribute('src')+'"></span></span></button>'
     +'<span class="ysh"></span>'
-    +'<button class="yx" type="button" aria-label="ヨムちゃんに引っ込んでもらう">×</button>'
     +'<button class="ycall" type="button">📖 ヨムちゃんを呼ぶ</button>'
     +'<div class="ybub" role="dialog" aria-label="ヨムちゃんに聞く">'
       +'<div class="ybt">やりたいことを一言でどうぞ。棚から探します</div>'
@@ -1196,11 +1191,9 @@ document.getElementById('viewBtn').onclick=()=>setView(viewMode==='shelf'?'list'
   const im=y.querySelector('img');
   if(im.complete) yomFit(im); else im.addEventListener('load',()=>yomFit(im));
   y.querySelector('.ybtn').onclick=()=>yomToggle();
-  y.querySelector('.yx').onclick=()=>{yomShow(false);toast('ヨムちゃんは引っ込みました');};
   y.querySelector('.ycall').onclick=()=>yomShow(true);
   y.querySelector('.yq').addEventListener('input',yomAnswer);
   y.querySelector('.yq').addEventListener('keydown',e=>{if(e.key==='Escape')yomToggle(false);});
-  if(localStorage.getItem('cm_yom')==='0') y.classList.add('off');
   let t=0;
   const nudge=()=>{if(t)return;t=requestAnimationFrame(()=>{t=0;yomShy();});};
   addEventListener('scroll',nudge,{passive:true});
