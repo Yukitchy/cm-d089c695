@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ツアー業務のAIツール図鑑</title>
+<meta name="description" content="秋葉原アニメツアーの現場で実際に動いているAIツールを、集客・予約・準備・当日・番組運営の順に並べた図鑑">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6f2;--card:#fff;--ink:#1a1a1a;--mute:#6b6b6b;--line:#e6e3dc;--red:#e63946;--red-d:#c92a3a;--chip:#f1efe9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",Inter,system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:40px 16px 80px}
+header{margin-bottom:36px}
+.kicker{font-family:Inter;font-weight:700;letter-spacing:.14em;font-size:12px;color:var(--red);text-transform:uppercase}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.2;margin:8px 0 12px;font-weight:700;letter-spacing:-.01em}
+header p{color:var(--mute);margin:0;max-width:640px}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+.toc a{font-size:13px;background:var(--chip);color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line)}
+.toc a:hover{border-color:var(--ink)}
+h2{font-size:14px;letter-spacing:.12em;color:var(--mute);margin:48px 0 14px;font-weight:700;display:flex;align-items:center;gap:12px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 18px;display:grid;grid-template-columns:120px 1fr;gap:20px;scroll-margin-top:16px}
+.tool .cover{width:120px;height:160px;object-fit:cover;border-radius:10px;background:var(--chip)}
+.tool h3{margin:0 0 4px;font-size:20px;line-height:1.3}
+.tool .no{font-family:Inter;font-weight:800;color:var(--red);font-size:13px;letter-spacing:.06em}
+.tool p{margin:8px 0 0}
+.tool .role{margin-top:10px;font-size:13px;color:var(--mute)}
+.tool .role b{color:var(--ink);font-weight:500}
+.shot{display:block;width:100%;margin-top:14px;border:1px solid var(--line);border-radius:10px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.btn{display:inline-block;padding:9px 16px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;border:1px solid var(--ink);color:var(--ink);background:#fff}
+.btn.primary{background:var(--red-d);border-color:var(--red-d);color:#fff}
+.btn:hover{opacity:.85}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--mute);margin-left:8px;vertical-align:middle}
+.tag.new{background:#fde8ea;color:var(--red-d)}
+.facts{margin:10px 0 0;padding-left:18px;font-size:14px}
+.facts li{margin:4px 0}
+footer{margin-top:60px;color:var(--mute);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media(max-width:600px){.tool{grid-template-columns:1fr}.tool .cover{width:96px;height:128px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">Anime Sensei / Tour Ops</div>
+<h1>ツアー業務のAIツール図鑑</h1>
+<p>秋葉原アニメツアーの現場で実際に動いているAIツールを、仕事の流れの順に並べました。★は2026年8月以降に増えたものです。送信・投稿・公開ボタン・料金の判断は人間が押しています。</p>
+<nav class="toc">
+<a href="#akiba-tour-site">予約サイト</a><a href="#seo-tantou">SEO担当</a><a href="#instagram">Instagram自動投稿</a><a href="#rival-check">競合調査</a>
+<a href="#kaburi-ban">かぶり番</a><a href="#viator">Viator即時確定</a><a href="#henshin-bancho">返信番頭</a>
+<a href="#akiba-tour-shiori">ツアーしおり</a><a href="#akiba-tour-shokunin">ツアー職人</a>
+<a href="#tour-photo-curator">写真セレクタ</a><a href="#tour-reviews">レビュー返信</a>
+<a href="#hayamihyo">販路早見表</a><a href="#oshi-guide">OshiGuide</a>
+<a href="#podcast-neta">ネタ出し</a><a href="#podcast-edit">音源の自動編集</a><a href="#podcast-bunko">文庫サイト</a>
+</nav>
+</header>
+
+<h2>集客</h2>
+
+<section class="tool" id="akiba-tour-site">
+<img class="cover" src="img/cover-akiba-tour-site.jpg" alt="">
+<div>
+<div class="no">01</div>
+<h3>予約サイト</h3>
+<p>ツアーとレッスンを「1人の先生が用意した日本への2つの扉」として1つのサイトにまとめた。設計・文章・実装をAIと一緒に進め、公開後の改修は下のSEO担当が毎朝続けている。</p>
+<div class="role"><b>人間の仕事:</b> 方針とデザインの好みを伝える。価格の判断。</div>
+<img class="shot" src="img/shot-tour-site.jpg" alt="予約サイトのトップ">
+<div class="btns"><a class="btn primary" href="https://tour.animesenseijp.com/" target="_blank" rel="noopener">サイトを見る</a></div>
+</div>
+</section>
+
+<section class="tool" id="seo-tantou">
+<img class="cover" src="img/shot-seo-rank.jpg" alt="" style="object-position:right top">
+<div>
+<div class="no">02</div>
+<h3>SEO担当（毎朝7:30に無人で動く）<span class="tag new">★</span></h3>
+<p>施策台帳から毎朝1〜2件を選び、自分でサイトを直して公開まで済ませる。夜中には英語記事を量産し、ChatGPTやGeminiに自分のツアーが引用されるかも毎日測っている。</p>
+<ul class="facts">
+<li>順位表は検索クリック・表示回数・平均順位の28日推移と、期限つきの採点で管理</li>
+<li>記事は1晩で20本。日本語学習の練習問題679問も記事から自動抽出</li>
+</ul>
+<div class="role"><b>人間の仕事:</b> 提案に「GO」を押す。効かなかった施策は台帳から外す。</div>
+<img class="shot" src="img/shot-seo-rank.jpg" alt="SEO順位表ダッシュボード">
+<div class="btns"><a class="btn" href="https://animesenseijp.com/" target="_blank" rel="noopener">改修対象のサイト</a></div>
+</div>
+</section>
+
+<section class="tool" id="instagram">
+<img class="cover" src="img/cover-instagram-growth.jpg" alt="">
+<div>
+<div class="no">03</div>
+<h3>Instagram自動投稿<span class="tag new">★</span></h3>
+<p>ツアー当日の写真から10枚のカルーセル（コラージュ1枚＋写真7枚＋固定の宣伝2枚）を組み、キャプション3案を作り、公式APIで投稿する。初投稿は9/4。</p>
+<div class="role"><b>人間の仕事:</b> 写真とキャプションの最終確認。情緒的な一文は「クサい」と却下し、キャラ名は書かず作品名だけにするルールになった。</div>
+<div class="btns"><a class="btn primary" href="https://www.instagram.com/p/Dc3Dg4WE5q-/" target="_blank" rel="noopener">初投稿を見る</a><a class="btn" href="https://www.instagram.com/yukianimesensei/" target="_blank" rel="noopener">アカウント</a></div>
+</div>
+</section>
+
+<section class="tool" id="rival-check">
+<div class="cover"></div>
+<div>
+<div class="no">04</div>
+<h3>競合調査<span class="tag new">★</span></h3>
+<p>GetYourGuide・Viator・Airbnb・Klookと検索の上位5本を実際に開き、価格・所要時間・行程の店名・写真枚数・レビューの傾向を記録して、自分の商品ページとの差分を出す。読み取り専用で、商品ページは触らない。</p>
+<p style="font-size:14px;color:var(--mute);margin-top:10px">2026-09-16の調査で出た差分（抜粋）</p>
+<ul class="facts">
+<li>同じツアーなのにOTAごとに中身が違う。実在店名はViator 5件・Airbnb 5件に対し、GetYourGuideは0件</li>
+<li>所要時間が4か所でバラバラ（3時間／4時間／3-4 hours／4 hours）</li>
+<li>GetYourGuideのレビューが3件のまま。Viator 174件・Airbnb 171件と桁が2つ違う</li>
+<li>競合はプライベート帯で¥27,000〜¥44,000が実際に売れている。自社は¥18,750〜23,810で下限寄り</li>
+</ul>
+<div class="role"><b>人間の仕事:</b> 差分のどれを直すか決める。</div>
+</div>
+</section>
+
+<h2>予約管理</h2>
+
+<section class="tool" id="kaburi-ban">
+<img class="cover" src="img/cover-kaburi-ban.jpg" alt="">
+<div>
+<div class="no">05</div>
+<h3>かぶり番（ダブルブッキング見張り）</h3>
+<p>5分ごとにGmailを読み、GetYourGuideとViatorの予約・変更・取消を専用カレンダー「ツアー予約」に書き込む。他のツアーや遠征とぶつかる時だけLINEが鳴る。Macが寝ていても動くようGoogle Apps Scriptで作った。</p>
+<ul class="facts">
+<li>Airbnbは公式のカレンダー連携をそのまま使い、「動かせない相手」として衝突判定にだけ使う</li>
+<li>レッスンや収録との重なりはLINEを鳴らさず、カレンダーに⚠️を付けるだけ</li>
+</ul>
+<div class="role"><b>人間の仕事:</b> 鳴った時だけ判断する。何もない日は何もしない。</div>
+</div>
+</section>
+
+<section class="tool" id="viator">
+<img class="cover" src="img/cover-viator-instant-safe.jpg" alt="">
+<div>
+<div class="no">06</div>
+<h3>Viator即時確定への切り替え<span class="tag new">★</span></h3>
+<p>在庫連携ができないViatorを、リクエスト制から即時確定に切り替えた。守りは4層。枠を開けすぎない、直前48時間は締める、かぶり番が検知する、最後は代打とお詫び。切り替え前はリクエストの空き判定と仮押さえを15分ごとに進めるBOTが受理を半自動化していた。</p>
+<div class="role"><b>人間の仕事:</b> 受理か代替日提案かの最終判断。</div>
+<div class="btns"><a class="btn primary" href="https://www.viator.com/tours/Tokyo/Akiba-Tailor-made-Tour-for-Anime-Fans/d334-176858P1" target="_blank" rel="noopener">Viatorの商品ページ</a></div>
+</div>
+</section>
+
+<section class="tool" id="henshin-bancho">
+<img class="cover" src="img/cover-henshin-bancho.jpg" alt="">
+<div>
+<div class="no">07</div>
+<h3>返信番頭（未返信チェック）</h3>
+<p>Gmail・Messenger・Instagram・WhatsApp・LINEで48時間以上放置しているやり取りを検出し、本人の文体で返信案を用意して承認待ちに並べる。送信は絶対にしない設計。</p>
+<div class="role"><b>人間の仕事:</b> 返信案を選んで送る。デリケートな件は案を作らせず自分で書く。</div>
+</div>
+</section>
+
+<h2>ツアー準備</h2>
+
+<section class="tool" id="akiba-tour-shiori">
+<img class="cover" src="img/cover-akiba-tour-shiori.jpg" alt="">
+<div>
+<div class="no">08</div>
+<h3>ツアーしおり</h3>
+<p>ゲストのフォーム回答と予約メールから、その人専用の行程案、日英のしおり（英語はPDF）、好きな作品に合わせたメルカリのサプライズギフト案を一式作る。当日のゲスト情報はiPhoneのホーム画面ウィジェットに出て、日付が過ぎると次のゲストに切り替わる。</p>
+<div class="role"><b>人間の仕事:</b> 行程の最終決定とギフトの購入。</div>
+</div>
+</section>
+
+<section class="tool" id="akiba-tour-shokunin">
+<img class="cover" src="img/cover-akiba-tour-shokunin.jpg" alt="">
+<div>
+<div class="no">09</div>
+<h3>ツアー職人</h3>
+<p>アンケートが届いたらワンクリックで行程の叩き台と昼食候補（営業◎／定休×／要確認△）がゲスト別カードで出る。予約メールの取り込み、変更リクエストや未回答の注意も同じ画面に並ぶ。</p>
+<div class="role"><b>人間の仕事:</b> 叩き台を見てゲストに返事を書く。ゲストへの送信はしない。</div>
+<img class="shot" src="img/shot-akiba-tour-shokunin.jpg" alt="ツアー職人の画面（ゲスト情報はぼかし）">
+</div>
+</section>
+
+<h2>当日〜事後</h2>
+
+<section class="tool" id="tour-photo-curator">
+<img class="cover" src="img/cover-tour-photo-curator.jpg" alt="">
+<div>
+<div class="no">10</div>
+<h3>写真セレクタ</h3>
+<p>当日の写真をブレ・露出・似た構図・美的スコアで機械的に絞る（例: 84枚→42枚、動画7本→4本）。ゲスト用ギャラリー、お礼のメッセージ、Instagramキャプション3案まで同時に出る。処理は全部Macの中で完結し、写真を外部のAIに送らない。</p>
+<div class="role"><b>人間の仕事:</b> ギャラリーのリンクを送る。投稿するかしないかを決める。</div>
+<img class="shot" src="img/shot-photo-dashboard.jpg" alt="写真セレクタの管理画面（写真はぼかし）">
+</div>
+</section>
+
+<section class="tool" id="tour-reviews">
+<img class="cover" src="img/cover-tour-reviews.jpg" alt="">
+<div>
+<div class="no">11</div>
+<h3>レビュー返信</h3>
+<p>毎朝8:30に新着レビューを取得し、人名を伏せた返信文案をGoogleシートに並べる。</p>
+<div class="role"><b>人間の仕事:</b> 選んで貼る。</div>
+</div>
+</section>
+
+<h2>経営・仲間向け</h2>
+
+<section class="tool" id="hayamihyo">
+<img class="cover" src="img/shot-hayamihyo.jpg" alt="" style="object-position:top">
+<div>
+<div class="no">12</div>
+<h3>販路早見表<span class="tag new">★</span></h3>
+<p>Viator 37%／GetYourGuide 25%／Airbnb 20%／Klook／直販の手数料と、手取り¥15,000から逆算した販売価格、出品の罠4つを1枚にまとめた。9/16のAirbnbホストワークショップで会ったホストに翌日渡した。</p>
+<div class="role"><b>人間の仕事:</b> 渡す相手を決める。</div>
+<div class="btns"><a class="btn primary" href="img/shot-hayamihyo.jpg" target="_blank" rel="noopener">早見表を見る</a></div>
+</div>
+</section>
+
+<section class="tool" id="oshi-guide">
+<img class="cover" src="img/shot-oshi-guide.jpg" alt="" style="object-position:left top">
+<div>
+<div class="no">13</div>
+<h3>OshiGuide（作りかけ）<span class="tag new">★</span></h3>
+<p>アニメ聖地の現地ガイドを、街ではなく「好きな作品」で探せる名鑑。決済も予約も持たず、各ガイドの既存OTAページへ送客するだけの構造。まだ受付フォームの接続前。</p>
+<div class="btns"><a class="btn" href="https://yukitchy.github.io/oshi-guide/" target="_blank" rel="noopener">名鑑のプロトタイプ</a></div>
+</div>
+</section>
+
+<h2>番組運営</h2>
+
+<section class="tool" id="podcast-neta">
+<img class="cover" src="img/cover-podcast-neta.jpg" alt="">
+<div>
+<div class="no">14</div>
+<h3>収録前のネタ出し</h3>
+<p>過去回・活動ログ・Gmail・カレンダー・SNSの未読を横断して集め、過去回で話したネタを弾き、会話の入り口だけを並べる。8番組の「そろそろ録る順」と在庫はネタ帳に出る。</p>
+<img class="shot" src="img/shot-kanpe-ya.jpg" alt="ネタ帳">
+</div>
+</section>
+
+<section class="tool" id="podcast-edit">
+<img class="cover" src="img/cover-podcast-edit-pipeline.jpg" alt="">
+<div>
+<div class="no">15</div>
+<h3>収録音源の自動編集</h3>
+<p>音声を置くだけで自動編集が走り、17分の番組が約4分で仕上がる。AIが波形と耳で検品し、管制盤のGOボタンからSpotifyの投稿画面まで作る。</p>
+<div class="role"><b>人間の仕事:</b> 聴いてGOを押す。公開ボタンは人間。</div>
+<img class="shot" src="img/shot-pondashi.jpg" alt="Podcast管制盤">
+</div>
+</section>
+
+<section class="tool" id="podcast-bunko">
+<img class="cover" src="img/cover-podcast-bunko.jpg" alt="">
+<div>
+<div class="no">16</div>
+<h3>文庫サイト（読めるPodcast）</h3>
+<p>9番組532話を文字起こしし、ハイライト付きの読み物として音声と並べて読める。毎日自動で増える。</p>
+<img class="shot" src="img/shot-bunko.jpg" alt="文庫サイトの体験ツアーガイドラジオ棚">
+<div class="btns"><a class="btn primary" href="https://bunko.yuukipodcast.com/tourguide/" target="_blank" rel="noopener">体験ツアーガイドラジオの棚</a></div>
+</div>
+</section>
+
+<footer>2026-09-17 時点。Yuuki Ichihara / Anime Sensei。画面のゲスト情報はぼかしています。</footer>
+</div>
+</body>
+</html>
