@@ -34,7 +34,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
 .pkg{background:#fff;border:1px solid var(--silver);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:transform .12s,box-shadow .12s}
 .pkg:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.10)}
 .pkg .top{display:flex;align-items:center;gap:9px;padding:9px 10px;border-bottom:4px solid}
-.pkg .badge{width:34px;height:34px;flex:0 0 auto;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:19px;line-height:1}
+.pkg .badge{width:34px;height:34px;flex:0 0 auto;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:19px;line-height:1;border:1px solid}
 .pkg .name{font-size:13.5px;font-weight:800;line-height:1.3;min-width:0}
 .pkg .new{background:var(--yellow);color:var(--ink);font-size:9px;font-weight:900;padding:2px 6px;border-radius:3px;letter-spacing:.04em;margin-left:auto;flex:0 0 auto;align-self:flex-start}
 .pkg .body{padding:8px 10px 10px}
@@ -43,12 +43,12 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
 .pkg .chips span{font-size:10.5px;font-weight:700;background:var(--fog);border:1px solid var(--silver);border-radius:999px;padding:2px 7px;white-space:nowrap}
 .pkg .chips span.hot{background:#fff4d6;border-color:#f2d98a}
 
-.c-blue .badge{background:var(--blue)} .c-blue .top{border-bottom-color:var(--blue)} .c-blue i{background:var(--blue)}
-.c-red .badge{background:var(--red)} .c-red .top{border-bottom-color:var(--red)} .c-red i{background:var(--red)}
-.c-orange .badge{background:var(--orange)} .c-orange .top{border-bottom-color:var(--orange)} .c-orange i{background:var(--orange)}
-.c-green .badge{background:var(--green)} .c-green .top{border-bottom-color:var(--green)} .c-green i{background:var(--green)}
-.c-purple .badge{background:var(--purple)} .c-purple .top{border-bottom-color:var(--purple)} .c-purple i{background:var(--purple)}
-.c-pink .badge{background:var(--pink)} .c-pink .top{border-bottom-color:var(--pink)} .c-pink i{background:var(--pink)}
+.c-blue .badge{background:#0084cc1a;border-color:#0084cc45} .c-blue .top{border-bottom-color:var(--blue)} .c-blue i{background:var(--blue)}
+.c-red .badge{background:#e430241a;border-color:#e4302445} .c-red .top{border-bottom-color:var(--red)} .c-red i{background:var(--red)}
+.c-orange .badge{background:#f4761f1a;border-color:#f4761f45} .c-orange .top{border-bottom-color:var(--orange)} .c-orange i{background:var(--orange)}
+.c-green .badge{background:#2fa83c1a;border-color:#2fa83c45} .c-green .top{border-bottom-color:var(--green)} .c-green i{background:var(--green)}
+.c-purple .badge{background:#9054c01a;border-color:#9054c045} .c-purple .top{border-bottom-color:var(--purple)} .c-purple i{background:var(--purple)}
+.c-pink .badge{background:#fc54841a;border-color:#fc548445} .c-pink .top{border-bottom-color:var(--pink)} .c-pink i{background:var(--pink)}
 
 @media(max-width:1200px){.board{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:720px){.board{grid-template-columns:repeat(2,1fr)}.pkg .name{font-size:13px}}
@@ -71,7 +71,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     <div class="colhead c-blue"><i></i>集客</div>
 
     <a class="pkg c-blue" href="zukan.html#akiba-tour-site">
-      <div class="top"><span class="badge">予</span><span class="name">予約サイト</span></div>
+      <div class="top"><span class="badge">🌐</span><span class="name">予約サイト</span></div>
       <div class="body">
         <p class="line">ツアーとレッスンを「日本への2つの扉」として1サイトに統合。</p>
         <div class="chips"><span>設計も文章もAIと</span><span>tour.animesenseijp.com</span></div>
@@ -79,7 +79,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     </a>
 
     <a class="pkg c-blue" href="zukan.html#seo-tantou">
-      <div class="top"><span class="badge">S</span><span class="name">SEO担当</span><span class="new">NEW</span></div>
+      <div class="top"><span class="badge">📈</span><span class="name">SEO担当</span><span class="new">NEW</span></div>
       <div class="body">
         <p class="line">毎朝7:30に無人で起動。台帳から1〜2件を自分で直して公開まで。</p>
         <div class="chips"><span class="hot">記事1晩20本</span><span>28日クリック55</span><span>平均順位11.6</span></div>
@@ -87,7 +87,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     </a>
 
     <a class="pkg c-blue" href="zukan.html#instagram">
-      <div class="top"><span class="badge">I</span><span class="name">Instagram自動投稿</span><span class="new">NEW</span></div>
+      <div class="top"><span class="badge">📸</span><span class="name">Instagram自動投稿</span><span class="new">NEW</span></div>
       <div class="body">
         <p class="line">当日の写真から10枚のカルーセルを組んで公式APIで投稿。</p>
         <div class="chips"><span class="hot">初投稿 9/4</span><span>キャプション3案</span></div>
@@ -95,7 +95,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     </a>
 
     <a class="pkg c-blue" href="zukan.html#rival-check">
-      <div class="top"><span class="badge">競</span><span class="name">競合調査</span><span class="new">NEW</span></div>
+      <div class="top"><span class="badge">🔍</span><span class="name">競合調査</span><span class="new">NEW</span></div>
       <div class="body">
         <p class="line">4社と検索の上位5本を実際に開いて、自分のページとの差分を出す。</p>
         <div class="chips"><span class="hot">店名 GYG 0件</span><span>レビュー3 vs 174</span><span>価格が下限寄り</span></div>
@@ -107,7 +107,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     <div class="colhead c-red"><i></i>予約管理</div>
 
     <a class="pkg c-red" href="zukan.html#kaburi-ban">
-      <div class="top"><span class="badge">か</span><span class="name">かぶり番</span></div>
+      <div class="top"><span class="badge">🚨</span><span class="name">かぶり番</span></div>
       <div class="body">
         <p class="line">5分ごとにメールを読んでカレンダーへ。ぶつかる時だけLINEが鳴る。</p>
         <div class="chips"><span class="hot">5分ごと</span><span>Macが寝てても動く</span><span>Airbnbは触らない</span></div>
@@ -115,7 +115,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     </a>
 
     <a class="pkg c-red" href="zukan.html#viator">
-      <div class="top"><span class="badge">V</span><span class="name">Viator即時確定</span><span class="new">NEW</span></div>
+      <div class="top"><span class="badge">⚡️</span><span class="name">Viator即時確定</span><span class="new">NEW</span></div>
       <div class="body">
         <p class="line">在庫連携なしで即時確定へ。枠を絞る／48時間で締める／検知／代打の4層。</p>
         <div class="chips"><span class="hot">カットオフ48時間</span><span>171レビュー</span><span>キャンセル率0%</span></div>
@@ -123,7 +123,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     </a>
 
     <a class="pkg c-red" href="zukan.html#henshin-bancho">
-      <div class="top"><span class="badge">番</span><span class="name">返信番頭</span></div>
+      <div class="top"><span class="badge">✉️</span><span class="name">返信番頭</span></div>
       <div class="body">
         <p class="line">48時間放置のやり取りを5媒体から拾って、返信案を承認待ちに並べる。</p>
         <div class="chips"><span class="hot">送信は絶対しない</span><span>自分の文体で</span></div>
@@ -135,7 +135,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     <div class="colhead c-orange"><i></i>ツアー準備</div>
 
     <a class="pkg c-orange" href="zukan.html#akiba-tour-shiori">
-      <div class="top"><span class="badge">栞</span><span class="name">ツアーしおり</span></div>
+      <div class="top"><span class="badge">🗺️</span><span class="name">ツアーしおり</span></div>
       <div class="body">
         <p class="line">回答と予約メールから、専用の行程案・日英のしおり・ギフト案を一式。</p>
         <div class="chips"><span>英語はPDF</span><span class="hot">iPhoneウィジェット</span></div>
@@ -143,7 +143,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     </a>
 
     <a class="pkg c-orange" href="zukan.html#akiba-tour-shokunin">
-      <div class="top"><span class="badge">職</span><span class="name">ツアー職人</span></div>
+      <div class="top"><span class="badge">📋</span><span class="name">ツアー職人</span></div>
       <div class="body">
         <p class="line">アンケートが来たらワンクリックで叩き台。昼食は営業◎／定休×／要確認△。</p>
         <div class="chips"><span class="hot">昼食の◎×△</span><span>予約メール取込</span><span>27件を管理中</span></div>
@@ -155,7 +155,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     <div class="colhead c-green"><i></i>当日〜事後</div>
 
     <a class="pkg c-green" href="zukan.html#tour-photo-curator">
-      <div class="top"><span class="badge">写</span><span class="name">写真セレクタ</span></div>
+      <div class="top"><span class="badge">🖼️</span><span class="name">写真セレクタ</span></div>
       <div class="body">
         <p class="line">ブレ・露出・似た構図・美的スコアで機械的に絞る。ギャラリーとお礼文まで。</p>
         <div class="chips"><span class="hot">84枚→42枚</span><span>動画7→4本</span><span>全部Macの中で</span></div>
@@ -163,7 +163,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     </a>
 
     <a class="pkg c-green" href="zukan.html#tour-reviews">
-      <div class="top"><span class="badge">礼</span><span class="name">レビュー返信</span></div>
+      <div class="top"><span class="badge">⭐️</span><span class="name">レビュー返信</span></div>
       <div class="body">
         <p class="line">毎朝8:30に新着を取得して、人名を伏せた返信文案をシートに並べる。</p>
         <div class="chips"><span class="hot">毎朝8:30</span><span>選んで貼るだけ</span></div>
@@ -175,7 +175,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     <div class="colhead c-purple"><i></i>経営・仲間向け</div>
 
     <a class="pkg c-purple" href="zukan.html#hayamihyo">
-      <div class="top"><span class="badge">販</span><span class="name">販路早見表</span><span class="new">NEW</span></div>
+      <div class="top"><span class="badge">💰</span><span class="name">販路早見表</span><span class="new">NEW</span></div>
       <div class="body">
         <p class="line">手数料と、手取りから逆算した販売価格を1枚に。会ったホストに翌日渡した。</p>
         <div class="chips"><span class="hot">V37 / G25 / A20</span><span>手取り¥15,000から逆算</span></div>
@@ -183,7 +183,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     </a>
 
     <a class="pkg c-purple" href="zukan.html#oshi-guide">
-      <div class="top"><span class="badge">推</span><span class="name">OshiGuide</span><span class="new">NEW</span></div>
+      <div class="top"><span class="badge">🧭</span><span class="name">OshiGuide</span><span class="new">NEW</span></div>
       <div class="body">
         <p class="line">街ではなく「好きな作品」で現地ガイドを探せる名鑑。まだ作りかけ。</p>
         <div class="chips"><span>決済も予約も持たない</span><span class="hot">既存OTAへ送客</span></div>
@@ -195,7 +195,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     <div class="colhead c-pink"><i></i>番組運営</div>
 
     <a class="pkg c-pink" href="zukan.html#podcast-neta">
-      <div class="top"><span class="badge">ネ</span><span class="name">収録前のネタ出し</span></div>
+      <div class="top"><span class="badge">💡</span><span class="name">収録前のネタ出し</span></div>
       <div class="body">
         <p class="line">過去回・活動ログ・メール・カレンダーを横断。既に話したネタは弾く。</p>
         <div class="chips"><span class="hot">このカンペ自体がそれ</span><span>8番組ぶんの在庫</span></div>
@@ -203,7 +203,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     </a>
 
     <a class="pkg c-pink" href="zukan.html#podcast-edit">
-      <div class="top"><span class="badge">編</span><span class="name">音源の自動編集</span></div>
+      <div class="top"><span class="badge">🎛️</span><span class="name">音源の自動編集</span></div>
       <div class="body">
         <p class="line">音声を置くだけで編集が走る。AIが波形と耳で検品して投稿画面まで作る。</p>
         <div class="chips"><span class="hot">17分が約4分</span><span>公開ボタンは人間</span></div>
@@ -211,7 +211,7 @@ h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
     </a>
 
     <a class="pkg c-pink" href="zukan.html#podcast-bunko">
-      <div class="top"><span class="badge">文</span><span class="name">文庫サイト</span></div>
+      <div class="top"><span class="badge">📖</span><span class="name">文庫サイト</span></div>
       <div class="body">
         <p class="line">収録を文字起こしして、音声と並べて読める読み物に。毎日自動で増える。</p>
         <div class="chips"><span class="hot">9番組532話</span><span>bunko.yuukipodcast.com</span></div>
