@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JAPOW WorHoli Agent — Land in Japan. Settled in a week.</title>
+<meta name="description" content="Free 30-minute orientation for working holiday makers, students and new arrivals in Tokyo &amp; Yokohama.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf8f4; --ink:#14213d; --acc:#6d28d9;
+  --card:#fff; --sub:#4d5873; --line:#e4e0d8; --cream:#f2efe6;
+}
+html,body{max-width:100%;overflow-x:hidden}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"Outfit",system-ui,sans-serif;font-weight:400;
+  font-size:17px;line-height:1.7;-webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.nw{white-space:nowrap}
+.mono{font-family:"Anonymous Pro",ui-monospace,monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(28px,4.6vw,40px);font-weight:800;line-height:1.2;letter-spacing:-.02em}
+h2 em{font-style:normal;color:var(--acc)}
+.sec-lead{color:var(--sub);font-size:16px;margin-top:10px;max-width:56ch}
+.eyebrow{font-family:"Anonymous Pro",monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:700}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--acc);color:#fff;text-decoration:none;font-weight:600;font-size:17px;
+  padding:15px 26px;border-radius:999px;line-height:1.3;white-space:nowrap;
+}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.small{font-size:15px;padding:11px 20px}
+
+/* ---------- header ---------- */
+header.top{padding:22px 0;border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:19px;letter-spacing:-.01em}
+.brand span{display:block;font-family:"Anonymous Pro",monospace;font-size:12px;font-weight:400;letter-spacing:.12em;color:var(--sub);text-transform:uppercase}
+nav.top-nav{display:flex;gap:22px;font-size:15px;flex-wrap:wrap}
+nav.top-nav a{text-decoration:none;color:var(--sub)}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:64px 0 72px}
+.hero h1{font-size:clamp(36px,6.4vw,62px);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin:14px 0 18px}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:var(--sub);max-width:34ch}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-fig{position:relative}
+.hero-fig img{border-radius:24px;width:100%;aspect-ratio:16/11;object-fit:cover}
+.board-chip{
+  position:absolute;left:16px;top:16px;
+  background:var(--ink);color:var(--cream);
+  font-family:"Anonymous Pro",monospace;font-size:12px;font-weight:700;letter-spacing:.12em;
+  padding:8px 14px;border-radius:8px;white-space:nowrap;
+}
+.board-chip b{color:#facc15;font-weight:700}
+
+/* ---------- lanes ---------- */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 22px}
+.tabs button{
+  font-family:"Outfit",sans-serif;font-size:15px;font-weight:600;color:var(--sub);
+  background:var(--card);border:1.5px solid var(--line);border-radius:999px;
+  padding:11px 20px;cursor:pointer;white-space:nowrap;
+}
+.tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+.panel{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.panel[hidden]{display:none}
+.panel .box{background:var(--card);border-radius:16px;padding:26px}
+.panel h3{font-size:18px;font-weight:800;margin-bottom:14px}
+.panel ol{margin:0;padding-left:22px}
+.panel ol li{margin-bottom:9px;color:var(--sub)}
+.panel ol li b{color:var(--ink);font-weight:600}
+.panel .box.plan{background:#f0ebfb}
+.panel .box.plan p{color:var(--sub);font-size:15px;margin-bottom:16px}
+.panel .box.plan .pick{font-size:22px;font-weight:800;line-height:1.3;margin-bottom:6px}
+
+/* ---------- arrival board ---------- */
+.board-wrap{background:var(--ink);border-radius:20px;padding:30px 26px 26px;color:var(--cream)}
+.board-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.board-top .t{font-family:"Anonymous Pro",monospace;font-size:14px;letter-spacing:.16em;font-weight:700;color:#facc15}
+.board-top .s{font-family:"Anonymous Pro",monospace;font-size:12px;letter-spacing:.1em;color:#9fb0cc}
+.brow{
+  display:grid;grid-template-columns:62px 1fr 200px 108px;gap:14px;align-items:center;
+  padding:13px 4px;border-top:1px solid #2c3d63;
+  font-family:"Anonymous Pro",monospace;font-size:15px;
+}
+.bhead{
+  border-top:none;padding-bottom:8px;font-size:12px;letter-spacing:.14em;color:#9fb0cc;font-weight:700;
+}
+.brow .day{font-weight:700;color:#facc15}
+.brow .task{font-weight:700;letter-spacing:.01em}
+.brow .where{color:#9fb0cc;font-size:13px}
+.brow .help{color:#7ee2b8;font-weight:700;font-size:13px;letter-spacing:.06em}
+.brow .help.no{color:#5b6d92}
+.board-foot{margin-top:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.board-foot .btn.ghost{color:#fff;border-color:#fff}
+.board-foot .note{font-family:"Anonymous Pro",monospace;font-size:12px;color:#9fb0cc;letter-spacing:.06em}
+@media (prefers-reduced-motion:no-preference){
+  .anim .brow:not(.bhead){opacity:0;animation:fadeup .5s ease forwards}
+}
+@keyframes fadeup{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+/* ---------- boarding pass cards ---------- */
+.pass-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.pass{
+  position:relative;background:var(--card);border-radius:16px;overflow:hidden;
+  display:grid;grid-template-columns:52px 1fr;min-height:132px;
+}
+.pass .stub{
+  background:var(--cream);display:flex;align-items:center;justify-content:center;
+}
+.pass .stub span{
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  font-family:"Anonymous Pro",monospace;font-size:12px;font-weight:700;
+  letter-spacing:.18em;color:var(--acc);text-transform:uppercase;white-space:nowrap;
+}
+.pass::before,.pass::after{
+  content:"";position:absolute;left:52px;width:14px;height:14px;border-radius:50%;
+  background:var(--bg);transform:translateX(-50%);
+}
+.pass::before{top:-7px}
+.pass::after{bottom:-7px}
+.pass .body{padding:20px 22px}
+.pass h3{font-size:17px;font-weight:800;margin-bottom:6px}
+.pass p{font-size:15px;color:var(--sub);line-height:1.6}
+
+
+.pass .body{padding:0;display:flex;flex-direction:column}
+.pass .body .txt{padding:18px 20px 20px}
+.pass img.sv{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:0}
+.pass{min-height:0}
+
+/* ---------- plans ---------- */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;align-items:start}
+.plan-card{background:var(--card);border-radius:16px;padding:26px;display:flex;flex-direction:column;height:100%}
+.plan-card.feature{background:var(--ink);color:var(--cream)}
+.plan-card.feature .price,.plan-card.feature h3{color:#fff}
+.plan-card.feature li{color:#d7dcea}
+.plan-card.feature .tagline{color:#9fb0cc}
+.plan-card .tag{
+  font-family:"Anonymous Pro",monospace;font-size:12px;letter-spacing:.14em;
+  color:var(--acc);font-weight:700;text-transform:uppercase
+}
+.plan-card.feature .tag{color:#facc15}
+.plan-card h3{font-size:21px;font-weight:800;margin:8px 0 2px}
+.plan-card .price{font-size:32px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;line-height:1.2}
+.plan-card .price small{font-size:14px;font-weight:400;color:var(--sub)}
+.plan-card.feature .price small{color:#9fb0cc}
+.plan-card .tagline{font-size:14px;color:var(--sub);margin-top:8px}
+.plan-card ul{list-style:none;margin:18px 0 22px}
+.plan-card li{font-size:15px;color:var(--sub);padding-left:24px;position:relative;margin-bottom:8px;line-height:1.5}
+.plan-card li::before{content:"✓";position:absolute;left:0;color:var(--acc);font-weight:800}
+.plan-card.feature li::before{color:#7ee2b8}
+.plan-card .btn{margin-top:auto;align-self:flex-start}
+.plan-card.feature .btn{background:#fff;color:var(--ink)}
+.plan-photo{border-radius:12px;margin-bottom:18px;aspect-ratio:16/9;object-fit:cover;width:100%}
+.plans-note{margin-top:18px;font-size:15px;color:var(--sub)}
+.plans-note b{color:var(--ink);font-weight:600;white-space:nowrap}
+
+/* ---------- tours ---------- */
+.tours{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.ticket{position:relative;background:var(--card);border-radius:16px;overflow:hidden}
+.ticket img{width:100%;aspect-ratio:16/8;object-fit:cover}
+.ticket .tbody{padding:22px 24px 24px}
+.ticket .city{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.ticket .rte{font-family:"Anonymous Pro",monospace;font-size:12px;letter-spacing:.14em;color:var(--acc);font-weight:700;margin-bottom:6px}
+.tmeta{display:grid;grid-template-columns:repeat(3,auto);gap:14px;margin:16px 0 0;border-top:1px dashed var(--line);padding-top:14px}
+.tmeta div{font-family:"Anonymous Pro",monospace;font-size:12px;color:var(--sub);letter-spacing:.06em}
+.tmeta div b{display:block;color:var(--ink);font-size:13px;font-weight:700;margin-top:3px}
+.tour-high{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+.tour-high div{background:var(--card);border-radius:14px;padding:18px 20px;font-size:15px;color:var(--sub);line-height:1.5}
+.tour-high div b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px}
+.tour-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
+.tour-cta .sm{font-size:14px;color:var(--sub)}
+.tour-cta .sm a{color:var(--acc)}
+
+/* ---------- stats ---------- */
+.stats{background:var(--cream);border-radius:20px;padding:40px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.stats .n{font-size:clamp(34px,5.4vw,54px);font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap;color:var(--acc)}
+.stats .l{font-size:14px;color:var(--sub);margin-top:10px;line-height:1.5}
+
+/* ---------- faq ---------- */
+.faq{max-width:780px;margin-top:26px}
+.faq details{background:var(--card);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+.faq summary{font-weight:600;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--acc);font-weight:800;font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--sub);font-size:15.5px;margin-top:12px}
+.faq p a{color:var(--acc)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:34px 0 120px;font-size:15px;color:var(--sub)}
+footer .f-in{display:flex;gap:10px 22px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--sub)}
+footer .fb{font-weight:600;color:var(--ink)}
+
+/* ---------- sticky mobile cta ---------- */
+.sticky{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:20;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(250,248,244,.96);border-top:1px solid var(--line);
+}
+.sticky .btn{width:100%}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;gap:28px;padding:44px 0 56px}
+  .panel{grid-template-columns:1fr}
+  .pass-grid{grid-template-columns:repeat(2,1fr)}
+  .plans{grid-template-columns:1fr}
+  .tours{grid-template-columns:1fr}
+  .tour-high{grid-template-columns:repeat(2,1fr)}
+  nav.top-nav{display:none}
+}
+@media (max-width:700px){
+  section{padding:52px 0}
+  .pass-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr;gap:26px;padding:32px 20px}
+  .board-wrap{padding:24px 16px 20px;border-radius:16px}
+  .brow{
+    grid-template-columns:34px 1fr 24px;
+    grid-template-areas:"day task help" ". where help";
+    gap:4px 10px;font-size:14px;padding:11px 2px;
+  }
+  .brow .day{grid-area:day}
+  .brow .task{grid-area:task}
+  .brow .where{grid-area:where;font-size:12px}
+  .brow .help{grid-area:help;text-align:right}
+  .brow .help .lbl{display:none}
+  .bhead{grid-template-areas:"day task help"}
+  .bhead .where,.bhead .help{display:none}
+  .sticky{display:block}
+  footer{padding-bottom:96px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand">JAPOW WorHoli Agent<span>Tokyo &middot; Yokohama</span></div>
+    <nav class="top-nav">
+      <a href="#lanes">Who we help</a>
+      <a href="#days">First 7 days</a>
+      <a href="#services">Services</a>
+      <a href="#plans">Plans</a>
+      <a href="#tours">Tours</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn small" href="https://www.instagram.com/japow.lifeinjapan/" target="_blank" rel="noopener">Free orientation</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Arrivals &middot; Working Holiday &amp; Students</p>
+      <h1>Land in Japan.<br>Settled in a week.</h1>
+      <p class="lead">Free 30-min orientation for <span class="nw">working holiday</span> makers, students and new arrivals in <span class="nw">Tokyo &amp; Yokohama</span>.</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://www.instagram.com/japow.lifeinjapan/" target="_blank" rel="noopener">Book a free orientation</a>
+        <a class="btn ghost" href="#tours">Pokémon &amp; Pop Culture Tour</a>
+      </div>
+    </div>
+    <figure class="hero-fig">
+      <img src="img/hero.webp" alt="JAPOW guide with two new arrivals in Yokohama">
+      <figcaption class="board-chip mono">NOW ARRIVING <b>&middot;</b> YOUR NEW LIFE</figcaption>
+    </figure>
+  </div>
+</div>
+
+<!-- ---------------- lanes ---------------- -->
+<section id="lanes">
+  <div class="wrap">
+    <p class="eyebrow">Step 1</p>
+    <h2>Which lane are you <em>in?</em></h2>
+    <p class="sec-lead">Pick the one that matches your visa, and we will show you what to do first.</p>
+
+    <div class="tabs" role="tablist" aria-label="Choose your lane">
+      <button role="tab" id="tab-whm" aria-controls="p-whm" aria-selected="true">Working Holiday</button>
+      <button role="tab" id="tab-stu" aria-controls="p-stu" aria-selected="false">Student</button>
+      <button role="tab" id="tab-vis" aria-controls="p-vis" aria-selected="false">Visiting Japan</button>
+    </div>
+
+    <div class="panel" id="p-whm" role="tabpanel" aria-labelledby="tab-whm">
+      <div class="box">
+        <h3>Your first three moves</h3>
+        <ol>
+          <li><b>Register your address</b> at the city hall and get your residence card stamped.</li>
+          <li><b>Get a SIM or eSIM</b> and a phone number you can put on forms.</li>
+          <li><b>Open a bank account</b> so an employer can pay you.</li>
+        </ol>
+      </div>
+      <div class="box plan">
+        <p class="eyebrow">Recommended</p>
+        <p class="pick">Full Support</p>
+        <p>City hall, bank, SIM, housing, Japanese-style résumé and community events — we go with you.</p>
+        <a class="btn small" href="#plans">See what is included</a>
+      </div>
+    </div>
+
+    <div class="panel" id="p-stu" role="tabpanel" aria-labelledby="tab-stu" hidden>
+      <div class="box">
+        <h3>Your first three moves</h3>
+        <ol>
+          <li><b>Register your address</b> and join <span class="nw">National Health Insurance</span> at the city office.</li>
+          <li><b>Sort your housing</b> — share house or rental, anywhere in Japan.</li>
+          <li><b>Write a Japanese-style résumé</b> for your part-time job hunt.</li>
+        </ol>
+      </div>
+      <div class="box plan">
+        <p class="eyebrow">Recommended</p>
+        <p class="pick">Résumé Support</p>
+        <p>Japanese-format CV with the right photo and a reference, plus the paperwork around it.</p>
+        <a class="btn small" href="#plans">See what is included</a>
+      </div>
+    </div>
+
+    <div class="panel" id="p-vis" role="tabpanel" aria-labelledby="tab-vis" hidden>
+      <div class="box">
+        <h3>Your first three moves</h3>
+        <ol>
+          <li><b>Pick your day</b> in <span class="nw">Tokyo or Yokohama</span> — the tour runs three hours.</li>
+          <li><b>Book the tour</b> and tell us what you collect.</li>
+          <li><b>Ask us anything else</b> about life in Japan while we walk.</li>
+        </ol>
+      </div>
+      <div class="box plan">
+        <p class="eyebrow">Recommended</p>
+        <p class="pick">Anime, Games &amp; Kawaii Pop Culture Tour</p>
+        <p>Trading cards, hobby shops, a Pokémon Center and local sweets, with an English-speaking guide.</p>
+        <a class="btn small" href="#tours">See the tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------- arrival board ---------------- -->
+<section id="days">
+  <div class="wrap">
+    <p class="eyebrow">Step 2</p>
+    <h2>Your first <em>7 days</em></h2>
+    <p class="sec-lead">Everything that has to happen after you land, in the order it happens.</p>
+
+    <div class="board-wrap anim" style="margin-top:28px">
+      <div class="board-top">
+        <div class="t mono">ARRIVALS &middot; FIRST WEEK</div>
+        <div class="s mono">TOKYO / YOKOHAMA &middot; JAPOW WORHOLI AGENT</div>
+      </div>
+
+      <div class="brow bhead mono"><div class="day">DAY</div><div class="task">TASK</div><div class="where">WHERE</div><div class="help">JAPOW<span class="lbl"> HELPS</span></div></div>
+
+      <div class="brow"><div class="day">1</div><div class="task">Register your address</div><div class="where">City office</div><div class="help">✓<span class="lbl"> YES</span></div></div>
+      <div class="brow"><div class="day">1</div><div class="task">Residence card check</div><div class="where">Airport / City office</div><div class="help no">—</div></div>
+      <div class="brow"><div class="day">2</div><div class="task">SIM or eSIM</div><div class="where">Carrier shop</div><div class="help">✓<span class="lbl"> YES</span></div></div>
+      <div class="brow"><div class="day">3</div><div class="task">Bank account</div><div class="where">Bank</div><div class="help">✓<span class="lbl"> YES</span></div></div>
+      <div class="brow"><div class="day">3</div><div class="task">Wise setup</div><div class="where">Online</div><div class="help">✓<span class="lbl"> YES</span></div></div>
+      <div class="brow"><div class="day">4</div><div class="task"><span class="nw">National Health</span> Insurance</div><div class="where">City office</div><div class="help">✓<span class="lbl"> YES</span></div></div>
+      <div class="brow"><div class="day">5</div><div class="task">Housing</div><div class="where">Share house / rental</div><div class="help">✓<span class="lbl"> YES</span></div></div>
+      <div class="brow"><div class="day">6</div><div class="task">Résumé <span class="nw">(Japanese format)</span></div><div class="where">JAPOW</div><div class="help">✓<span class="lbl"> YES</span></div></div>
+      <div class="brow"><div class="day">7</div><div class="task">Meet people</div><div class="where">Community event</div><div class="help">✓<span class="lbl"> YES</span></div></div>
+
+      <div class="board-foot">
+        <a class="btn ghost small" href="../checklist.html">Open the interactive checklist</a>
+        <span class="note mono">TICK IT OFF AS YOU GO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------- services ---------------- -->
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">What we do</p>
+    <h2>Nine things we <em>handle with you</em></h2>
+    <p class="sec-lead">Each one is a counter you would otherwise face alone, in Japanese.</p>
+
+    <div class="pass-grid">
+      <article class="pass"><div class="stub"><span>Arrival</span></div><div class="body"><img class="sv" src="img/sv-orientation.jpg" alt="Guide handing over the Japan Life Guidebook" loading="lazy"><div class="txt"><h3>Orientation</h3><p>Videos and a Japan Life Guidebook, so you know what is coming before it comes.</p></div></div></article>
+      <article class="pass"><div class="stub"><span>Paperwork</span></div><div class="body"><img class="sv" src="img/sv-cityhall.jpg" alt="At the city office counter with a staff member" loading="lazy"><div class="txt"><h3>City hall procedures</h3><p>Address registration, insurance and the forms that come with them.</p></div></div></article>
+      <article class="pass"><div class="stub"><span>Money</span></div><div class="body"><img class="sv" src="img/sv-bank.jpg" alt="Opening an account at the bank counter" loading="lazy"><div class="txt"><h3>Bank account</h3><p>Opening an account you can actually be paid into.</p></div></div></article>
+      <article class="pass"><div class="stub"><span>Connect</span></div><div class="body"><img class="sv" src="img/sv-sim.jpg" alt="Choosing a phone plan in a carrier shop" loading="lazy"><div class="txt"><h3>SIM &amp; phone</h3><p>A Japanese number and a plan that fits how long you are staying.</p></div></div></article>
+      <article class="pass"><div class="stub"><span>Living</span></div><div class="body"><img class="sv" src="img/sv-housing.jpg" alt="A furnished room in a share house" loading="lazy"><div class="txt"><h3>Housing</h3><p>Share house or rental, anywhere in Japan — nationwide, not only <span class="nw">Tokyo &amp; Yokohama</span>.</p></div></div></article>
+      <article class="pass"><div class="stub"><span>Work</span></div><div class="body"><img class="sv" src="img/sv-resume.jpg" alt="Working on a Japanese-format CV" loading="lazy"><div class="txt"><h3>Résumé &amp; CV</h3><p>Japanese-style CV with the right photo and a reference.</p></div></div></article>
+      <article class="pass"><div class="stub"><span>People</span></div><div class="body"><img class="sv" src="img/sv-community.jpg" alt="New arrivals and locals at a community event" loading="lazy"><div class="txt"><h3>Community events</h3><p>Meet other new arrivals and locals, so you are not doing this alone.</p></div></div></article>
+      <article class="pass"><div class="stub"><span>Health</span></div><div class="body"><img class="sv" src="img/sv-medical.jpg" alt="Using the medical interpretation app with a doctor" loading="lazy"><div class="txt"><h3>Medical interpretation</h3><p>An interpretation app for the doctor, the clinic and the pharmacy.</p></div></div></article>
+      <article class="pass"><div class="stub"><span>Language</span></div><div class="body"><img class="sv" src="img/sv-lesson.jpg" alt="A Japanese lesson in a tatami room" loading="lazy"><div class="txt"><h3>Japanese lessons</h3><p>Lessons and Wise money transfer support for sending money home.</p></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------- plans ---------------- -->
+<section id="plans">
+  <div class="wrap">
+    <p class="eyebrow">Plans</p>
+    <h2>Start free. <em>Add what you need.</em></h2>
+    <p class="sec-lead">Every plan starts with a conversation — the first one costs nothing.</p>
+
+    <div class="plans">
+      <article class="plan-card">
+        <img class="plan-photo" src="img/a.webp" alt="Orientation session with the Japan Life Guidebook on the table">
+        <p class="tag">Start here</p>
+        <h3>Free Orientation</h3>
+        <p class="price">¥0</p>
+        <p class="tagline">No obligation, no card needed.</p>
+        <ul>
+          <li><span class="nw">30-minute</span> session</li>
+          <li>Japan Life Guidebook</li>
+          <li>Q&amp;A on your own situation</li>
+        </ul>
+        <a class="btn small" href="https://www.instagram.com/japow.lifeinjapan/" target="_blank" rel="noopener">Book on Instagram</a>
+      </article>
+
+      <article class="plan-card feature">
+        <p class="tag">Most complete</p>
+        <h3>Full Support</h3>
+        <p class="price"><span class="nw">¥100,000</span></p>
+        <p class="tagline">Your whole first week, handled together.</p>
+        <ul>
+          <li>Orientation videos &amp; guidebook</li>
+          <li>City hall procedures</li>
+          <li>Bank account opening</li>
+          <li>SIM &amp; phone setup</li>
+          <li>Housing — share house or rental</li>
+          <li>Résumé &amp; CV <span class="nw">(Japanese style)</span></li>
+          <li>Community events</li>
+          <li>Medical interpretation app</li>
+          <li>Japanese lessons &amp; Wise setup</li>
+        </ul>
+        <a class="btn small" href="https://www.instagram.com/japow.lifeinjapan/" target="_blank" rel="noopener">Ask about Full Support</a>
+      </article>
+
+      <article class="plan-card">
+        <p class="tag">Job hunting</p>
+        <h3>Résumé Support</h3>
+        <p class="price"><span class="nw">¥30,000</span></p>
+        <p class="tagline">For when the paperwork is done and the work starts.</p>
+        <ul>
+          <li>Japanese-format résumé</li>
+          <li>Photo guidance</li>
+          <li>Reference support</li>
+        </ul>
+        <a class="btn small" href="https://www.instagram.com/japow.lifeinjapan/" target="_blank" rel="noopener">Ask about Résumé Support</a>
+      </article>
+    </div>
+
+    <p class="plans-note">Only need one thing? <b>Customized support from ¥3,000</b> — tell us which counter you are stuck at.</p>
+  </div>
+</section>
+
+<!-- ---------------- tours ---------------- -->
+<section id="tours">
+  <div class="wrap">
+    <p class="eyebrow">Day out</p>
+    <h2>Anime, Games &amp; <em>Kawaii Pop Culture Tour</em></h2>
+    <p class="sec-lead">Three hours with an English-speaking guide. Pick your city.</p>
+
+    <div class="tours">
+      <article class="ticket">
+        <img src="img/e.webp" alt="Visitors at Shibuya crossing in Tokyo">
+        <div class="tbody">
+          <p class="rte mono">BOARDING PASS &middot; 3H</p>
+          <p class="city">TOKYO</p>
+          <div class="tmeta">
+            <div>DEPARTURE<b>3 HOURS</b></div>
+            <div>GATE<b>Anime &amp; Games</b></div>
+            <div>SEAT<b>Small group</b></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ticket">
+        <img src="img/hero.webp" alt="Guide and guests in Yokohama">
+        <div class="tbody">
+          <p class="rte mono">BOARDING PASS &middot; 3H</p>
+          <p class="city">YOKOHAMA</p>
+          <div class="tmeta">
+            <div>DEPARTURE<b>3 HOURS</b></div>
+            <div>GATE<b>Kawaii &amp; Cards</b></div>
+            <div>SEAT<b>Small group</b></div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="tour-high">
+      <div><b>Trading cards</b>Card shops and hobby stores most visitors walk past.</div>
+      <div><b>Pokémon Center</b>The official store, with a guide who can read the signs.</div>
+      <div><b>Local sweets</b>A stop for something you would not order by yourself.</div>
+      <div><b>Free time</b>Shop at your own pace before we say goodbye.</div>
+    </div>
+
+    <div class="tour-cta">
+      <!-- TODO: Airbnb URL -->
+      <a class="btn" href="https://www.instagram.com/japow.lifeinjapan/" target="_blank" rel="noopener">Book on Airbnb</a>
+      <p class="sm">Booked already? <a href="../pretour.html">Fill the 2-minute pre-tour form</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------- stats ---------------- -->
+<section>
+  <div class="wrap">
+    <div class="stats">
+      <div><p class="n">36M</p><p class="l">visitors to Japan in 2024</p></div>
+      <div><p class="n">3.7M</p><p class="l">foreign residents living here</p></div>
+      <div><p class="n">200,000+</p><p class="l"><span class="nw">working holiday</span> makers &amp; students</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------- faq ---------------- -->
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">FAQ</p>
+    <h2>Before you <em>ask</em></h2>
+
+    <div class="faq">
+      <details>
+        <summary>Do I need to speak Japanese?</summary>
+        <p>No. Support is in English, and we come with you to the counters where Japanese is required — city hall, the bank, the carrier shop. For the doctor there is a medical interpretation app, and if you want to learn, we run Japanese lessons too.</p>
+      </details>
+      <details>
+        <summary>Can you help before I arrive?</summary>
+        <p>Yes. The free orientation is a 30-minute session plus the Japan Life Guidebook, and you can take it before you land so you know the order things happen in.</p>
+      </details>
+      <details>
+        <summary>Where are you based?</summary>
+        <p><span class="nw">Tokyo and Yokohama</span>. Housing support covers the whole of Japan — share houses and rentals nationwide — so you do not have to stay in this area to work with us.</p>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <p>We will walk you through it when you choose a plan. We also help you set up Wise, which is what most people here use to move money between countries. <a href="https://www.instagram.com/japow.lifeinjapan/" target="_blank" rel="noopener">Ask us on Instagram</a>.</p>
+      </details>
+      <details>
+        <summary>Is the orientation really free?</summary>
+        <p>Yes — 30 minutes, the Japan Life Guidebook and a Q&amp;A, at no cost. Paid plans start at <span class="nw">¥3,000</span> for customized support, and only if you want them.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap f-in">
+    <span class="fb">JAPOW WorHoli Agent</span>
+    <span>Tokyo &amp; Yokohama</span>
+    <a href="https://www.instagram.com/japow.lifeinjapan/" target="_blank" rel="noopener">Instagram @japow.lifeinjapan</a>
+    <a href="https://drive.google.com/file/d/1W0Sz1VZKq930mck_9X2hJ5nS6iMqZV0S/view" target="_blank" rel="noopener">Privacy policy</a>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn" href="https://www.instagram.com/japow.lifeinjapan/" target="_blank" rel="noopener">Free orientation</a>
+</div>
+
+<script>
+// lane tabs
+document.querySelectorAll('[role="tab"]').forEach(function (tab) {
+  tab.addEventListener('click', function () {
+    document.querySelectorAll('[role="tab"]').forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  });
+});
+
+// arrival board: rows fade in top to bottom
+document.querySelectorAll('.board-wrap .brow:not(.bhead)').forEach(function (row, i) {
+  row.style.animationDelay = (i * 70) + 'ms';
+});
+</script>
+</body>
+</html>

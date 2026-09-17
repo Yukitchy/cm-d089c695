@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YUKAさん AI診断 ヒアリングシート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#fbf9f6;--ink:#1c1c1c;--acc:#d6336c;--card:#fff;--sub:#5d5d5d;--line:#ece8e2}
+html,body{max-width:100%;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New",system-ui,sans-serif;font-weight:500;line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:560px;margin:0 auto;padding:36px 20px 64px}
+
+.kicker{font-size:13px;font-weight:700;color:var(--acc);letter-spacing:.04em}
+h1{font-size:clamp(23px,5.9vw,28px);font-weight:900;line-height:1.35;margin:10px 0 12px;letter-spacing:-.01em}
+.lead{font-size:15px;color:var(--sub);line-height:1.85}
+
+section{margin-top:44px}
+h2{font-size:20px;font-weight:900;line-height:1.45;margin:0 0 14px}
+h2 span{color:var(--acc);margin-right:8px}
+h3{font-size:16px;font-weight:900;line-height:1.5;margin:26px 0 10px;color:var(--acc)}
+
+.card{background:var(--card);border-radius:16px;padding:20px}
+.card+.card{margin-top:12px}
+.card p{font-size:15px;line-height:1.85}
+.card p+p{margin-top:10px}
+.card .note{font-size:14px;color:var(--sub)}
+
+.say{background:var(--card);border-radius:16px;padding:20px}
+.say .lbl{font-size:13px;font-weight:900;color:var(--acc);letter-spacing:.04em;margin-bottom:10px}
+.say p{font-size:16px;line-height:1.9}
+.say p+p{margin-top:12px}
+.first{background:var(--acc);color:#fff;border-radius:16px;padding:20px;margin-top:12px}
+.first .lbl{font-size:13px;font-weight:900;letter-spacing:.04em;margin-bottom:8px;opacity:.85}
+.first p{font-size:18px;font-weight:900;line-height:1.6}
+
+.q{background:var(--card);border-radius:16px;padding:18px 20px}
+.q+.q{margin-top:12px}
+.q label.h{display:flex;align-items:flex-start;gap:13px;cursor:pointer}
+.q input[type=checkbox]{width:23px;height:23px;margin-top:3px;flex:0 0 auto;accent-color:var(--acc)}
+.q .t{font-size:16px;font-weight:900;line-height:1.55;display:block}
+.q .why{font-size:13px;color:var(--sub);line-height:1.7;margin-top:5px;display:block}
+.q input[type=checkbox]:checked ~ .txt .t{color:var(--sub)}
+.q textarea{width:100%;margin-top:12px;background:var(--bg);border:0;border-radius:12px;padding:12px;font-family:inherit;font-size:15px;font-weight:500;line-height:1.7;color:var(--ink);resize:vertical;min-height:62px}
+.q textarea::placeholder{color:#a7a19a}
+
+.prog{background:var(--card);border-radius:16px;padding:18px 20px;margin-top:14px;position:sticky;top:10px;z-index:5}
+.prog .n{font-size:16px;font-weight:900;margin-bottom:10px}
+.bar{background:var(--line);border-radius:99px;height:10px;overflow:hidden}
+.bar i{display:block;background:var(--acc);height:100%;width:0;border-radius:99px;transition:width .2s}
+
+.abc{background:var(--card);border-radius:16px;padding:20px}
+.abc+.abc{margin-top:12px}
+.abc .tag{font-size:14px;font-weight:900;color:var(--acc);margin-bottom:4px}
+.abc .d{font-size:15px;line-height:1.8}
+.abc textarea{width:100%;margin-top:12px;background:var(--bg);border:0;border-radius:12px;padding:12px;font-family:inherit;font-size:15px;font-weight:500;line-height:1.7;color:var(--ink);resize:vertical;min-height:80px}
+
+.idea{background:var(--card);border-radius:16px;padding:18px 20px}
+.idea+.idea{margin-top:12px}
+.idea h4{font-size:16px;font-weight:900;line-height:1.5;margin:0 0 6px}
+.idea h4 i{font-style:normal;color:var(--acc);margin-right:7px}
+.idea p{font-size:14px;color:var(--sub);line-height:1.8}
+.idea .real{display:inline-block;margin-top:8px;font-size:13px;font-weight:900;color:var(--acc);line-height:1.6}
+.idea .none{color:var(--sub);font-weight:700}
+
+ul.ng{list-style:none}
+ul.ng li{background:var(--card);border-radius:16px;padding:16px 20px;font-size:15px;line-height:1.8}
+ul.ng li+li{margin-top:10px}
+ul.ng li b{display:block;font-weight:900;margin-bottom:3px}
+ul.ng li span{font-size:14px;color:var(--sub)}
+
+footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--sub);line-height:1.8}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="kicker">2026/9/17 横浜｜ユウキ手元用・見せない</p>
+  <h1>YUKAさん<br>AI診断 ヒアリングシート</h1>
+  <p class="lead">上から順に読めば進む。チェックとメモはこの端末に保存されます。</p>
+</header>
+
+<div class="prog"><div class="n" id="count">0 / 20 問</div><div class="bar"><i id="fill"></i></div></div>
+
+<section>
+  <h2><span>01</span>冒頭の型（3分）</h2>
+  <div class="say">
+    <p class="lbl">最初に言う3文</p>
+    <p>今日は何かを売りに来たのではなく、YUKAさんの1週間のうち、機械に渡せる時間を一緒に探しに来ました。</p>
+    <p>僕も秋葉原で同じことを一人でやっていて、同じところで詰まったので、そこで作ったものをそのまま見せます。</p>
+    <p>だから今日は、僕が7割質問して、最後に「明日やる1つ」だけ決めて帰ります。それ以上は持ち帰らなくて大丈夫です。</p>
+  </div>
+  <div class="first">
+    <p class="lbl">最初の質問（これだけ投げて黙る）</p>
+    <p>この1週間で、いちばん時間を取られた作業は何でしたか？</p>
+  </div>
+</section>
+
+<section>
+  <h2><span>02</span>ヒアリング20問</h2>
+
+  <h3>時間の使い方</h3>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q1"><span class="txt"><span class="t">1. 1週間をざっくり分けると、ツアー・サポート・集客・事務は何対何ですか？</span><span class="why">聞く理由: どこを削ると効くかが、本人の体感の配分で決まるから</span></span></label><textarea data-k="m1" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q2"><span class="txt"><span class="t">2. その中で、いちばん嫌いな作業はどれですか？</span><span class="why">聞く理由: 嫌いな作業は続かない＝自動化の初手として成功しやすい</span></span></label><textarea data-k="m2" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q3"><span class="txt"><span class="t">3. 夜中にやりがちな作業は何ですか？</span><span class="why">聞く理由: 夜に回っている作業＝日中に終わらない量が溜まっている場所</span></span></label><textarea data-k="m3" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q4"><span class="txt"><span class="t">4. 「これ先月も同じこと書いたな」と思った説明は、直近で何回ありましたか？</span><span class="why">聞く理由: 繰り返しの回数がそのままテンプレ化の優先順位になる</span></span></label><textarea data-k="m4" placeholder="メモ"></textarea></div>
+
+  <h3>集客</h3>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q5"><span class="txt"><span class="t">5. 問い合わせはどこから来ますか。Instagram・紙チラシ・紹介・サイトの内訳は？</span><span class="why">聞く理由: 伸ばす入り口と、捨てていい入り口を分けるため</span></span></label><textarea data-k="m5" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q6"><span class="txt"><span class="t">6. Instagramは週に何回投稿して、1投稿に何分かかっていますか？</span><span class="why">聞く理由: 分×回数が、キャプション生成で丸ごと浮く時間になる</span></span></label><textarea data-k="m6" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q7"><span class="txt"><span class="t">7. 紙のチラシはどこに置いていますか。効いている置き場所は分かりますか？</span><span class="why">聞く理由: 効く場所が分かっていれば多言語版の刷り分けが次の一手になる</span></span></label><textarea data-k="m7" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q8"><span class="txt"><span class="t">8. 紹介経由のお客さんは、全体の何割くらいですか？</span><span class="why">聞く理由: 紹介が多いなら広告より「紹介しやすい1枚」を作る方が早い</span></span></label><textarea data-k="m8" placeholder="メモ"></textarea></div>
+
+  <h3>予約と当日</h3>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q9"><span class="txt"><span class="t">9. ツアーの予約をAirbnb以外に出していないのは、何か理由がありますか？</span><span class="why">聞く理由: 手が回らないだけなのか、意図して絞っているのかで提案が真逆になる</span></span></label><textarea data-k="m9" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q10"><span class="txt"><span class="t">10. 予約が入ってから当日までに、ゲストと何回やりとりしますか？</span><span class="why">聞く理由: 回数がそのまま自動ヒアリングで置き換えられる往復の数</span></span></label><textarea data-k="m10" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q11"><span class="txt"><span class="t">11. ゲストの好み（推しの作品・歩ける距離・食べられないもの）は、事前にどう聞いていますか？</span><span class="why">聞く理由: 聞けていないなら事前アンケートが今日そのまま渡せる</span></span></label><textarea data-k="m11" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q12"><span class="txt"><span class="t">12. 直前キャンセルはどのくらいありますか。そのときの連絡は誰がしますか？</span><span class="why">聞く理由: キャンセル対応が手作業なら、定型文と枠の埋め直しが効く</span></span></label><textarea data-k="m12" placeholder="メモ"></textarea></div>
+
+  <h3>サポート業務</h3>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q13"><span class="txt"><span class="t">13. Full Supportの1件は、実働で何時間くらいかかっていますか？</span><span class="why">聞く理由: ¥100,000の中身を時間に割ると、値付けと自動化の両方が見える</span></span></label><textarea data-k="m13" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q14"><span class="txt"><span class="t">14. そのうち、実際に同行しないと終わらないのはどの部分ですか？</span><span class="why">聞く理由: 同行だけが本当の商品で、それ以外は機械に渡せる可能性が高い</span></span></label><textarea data-k="m14" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q15"><span class="txt"><span class="t">15. 履歴書・書類まわりに、使い回しているテンプレはありますか？</span><span class="why">聞く理由: テンプレの有無で「作る」か「整える」かが決まる</span></span></label><textarea data-k="m15" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q16"><span class="txt"><span class="t">16. 英語以外の言語で問い合わせが来ることはありますか？</span><span class="why">聞く理由: 来ているのに断っているなら、多言語化は売上が増える側の話になる</span></span></label><textarea data-k="m16" placeholder="メモ"></textarea></div>
+
+  <h3>お金と体力</h3>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q17"><span class="txt"><span class="t">17. 月に何日稼働していますか。休みは取れていますか？</span><span class="why">聞く理由: 限界がどこにあるかを数字で共有しないと提案が絵空事になる</span></span></label><textarea data-k="m17" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q18"><span class="txt"><span class="t">18. 人を雇う・外注することは考えていますか。今もう誰かに頼んでいる部分はありますか？</span><span class="why">聞く理由: 人に頼めない理由（引き継ぎ資料が無い等）がそのまま次の作り物になる</span></span></label><textarea data-k="m18" placeholder="メモ"></textarea></div>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q19"><span class="txt"><span class="t">19. 今の値段は、どうやって決めましたか？</span><span class="why">聞く理由: 相場合わせなのか原価からなのかで、販路追加の設計が変わる</span></span></label><textarea data-k="m19" placeholder="メモ"></textarea></div>
+
+  <h3>未来</h3>
+  <div class="q"><label class="h"><input type="checkbox" data-k="q20"><span class="txt"><span class="t">20. 1年後どうなっていたいですか。増やしたい客層と、やめたい仕事を1つずつ教えてください。</span><span class="why">聞く理由: 締めで決める「明日の1手」を、この答えの方向に合わせるため</span></span></label><textarea data-k="m20" placeholder="メモ"></textarea></div>
+</section>
+
+<section>
+  <h2><span>03</span>その場で出す診断</h2>
+  <p class="lead" style="margin-bottom:14px">聞いた内容を3つに分けて、その場で口に出す。分けた時点で診断は終わっている。</p>
+
+  <div class="abc">
+    <div class="tag">A｜今日すぐ渡せる</div>
+    <div class="d">もう手元にあるもの。URLを渡して終わる。今日の成果はここに1つ以上入っていれば合格。</div>
+    <textarea data-k="a1" placeholder="例: 予約後アンケートのURL / 7日チェックリスト"></textarea>
+  </div>
+  <div class="abc">
+    <div class="tag">B｜1週間でユウキが作れる</div>
+    <div class="d">作れば効くが今日は無いもの。次に会う日を決めるための材料にする。3つ以上出さない。</div>
+    <textarea data-k="a2" placeholder="例: FAQの自動生成 / ガイドブックの多言語版"></textarea>
+  </div>
+  <div class="abc">
+    <div class="tag">C｜本人がやるしかない</div>
+    <div class="d">値付けの決断・販路の登録・写真を撮ること。ここを機械で埋めようとしない。</div>
+    <textarea data-k="a3" placeholder="例: Viatorの出品登録 / 単価の見直し"></textarea>
+  </div>
+</section>
+
+<section>
+  <h2><span>04</span>提案の弾（12案）</h2>
+
+  <h3>予約と当日</h3>
+  <div class="idea"><h4><i>①</i>予約後の自動ヒアリング</h4><p>予約が入ったらURLを1本送るだけ。好きな作品・歩ける距離・食べられないものが英文サマリーで返ってくる。往復のDMが消える。</p><span class="real">今日見せられる実物: pretour.html</span></div>
+  <div class="idea"><h4><i>②</i>予約の自動取り込み</h4><p>販路ごとにバラバラに届く予約メールを、1つの表に集める。当日の朝に見る場所が1か所になる。</p><span class="real">今日見せられる実物: 秋葉原ツアーの予約台帳</span></div>
+  <div class="idea"><h4><i>③</i>販路追加の価格設計</h4><p>手取りを先に決めて、手数料から逆算して表示価格を出す。Airbnb1本の在庫リスクを外せる。</p><span class="real">今日見せられる実物: 販路早見表（hayamihyo.png）</span></div>
+  <div class="idea"><h4><i>④</i>レビュー依頼と返信の型</h4><p>解散時に1回だけお願いする文と、届いたレビューへの返信案。返信を書く時間がほぼ消える。</p><span class="real">今日見せられる実物: Viatorのレビュー返信</span></div>
+
+  <h3>集客</h3>
+  <div class="idea"><h4><i>⑤</i>Instagramキャプションの英日同時生成</h4><p>写真と一言を入れると、英語のキャプションと日本語版が同時に出る。投稿ごとの数十分がそのまま浮く。</p><span class="real">今日見せられる実物: IGキャプション生成</span></div>
+  <div class="idea"><h4><i>⑥</i>投稿の自動化</h4><p>作ったキャプションと写真を、決めた時間に自分で投稿させる。手が空いた時に投稿する運用をやめられる。</p><span class="real">今日見せられる実物: Instagram自動投稿</span></div>
+  <div class="idea"><h4><i>⑦</i>写真の選別</h4><p>ツアーで撮った数百枚から、使える1枚を機械に絞らせる。選ぶ時間が一番減る。</p><span class="real">今日見せられる実物: 写真セレクタ</span></div>
+  <div class="idea"><h4><i>⑧</i>サイト改善と検索から拾う記事</h4><p>STUDIOのサイトに、検索で見つかる入り口を足す。紙チラシとInstagram以外の入り口がもう1本できる。</p><span class="real">今日見せられる実物: site/index.html・SEO記事量産</span></div>
+
+  <h3>サポート業務</h3>
+  <div class="idea"><h4><i>⑨</i>最初の7日チェックリスト</h4><p>Instagramのプロフィールに置けるURL。詰まった項目から無料オリエンへ流れる。渡すだけで営業になる。</p><span class="real">今日見せられる実物: checklist.html</span></div>
+  <div class="idea"><h4><i>⑩</i>同じ質問への回答テンプレ自動生成（FAQ化）</h4><p>これまで送ったDMの返事をまとめて、よくある質問と答えの形に直す。次からは選んで送るだけ。</p><span class="real">今日見せられる実物: 旅のしおりの自動生成で同じ仕組み</span></div>
+  <div class="idea"><h4><i>⑪</i>ガイドブックとチラシの多言語版</h4><p>Japan Life Guidebookと紙チラシを、同じレイアウトのまま他の言語に。ワーホリ協定国の側に寄せられる。</p><span class="real">今日見せられる実物: 多言語化・秋葉原ツアーの各国語ページ</span></div>
+  <div class="idea"><h4><i>⑫</i>面談の文字起こしと要約</h4><p>オリエン30分を録って、要点と次にやることだけ残す。面談後のメモ書きが要らなくなる。</p><span class="real">今日見せられる実物: 音声の文字起こしと要約</span></div>
+
+  <div class="idea"><h4><i>＋</i>まだ実物が無いもの</h4><p>問い合わせの一次対応BOTと、収支の月次集計は僕もまだ作っていない。今日は「作れる」とだけ言って、作るのは持ち帰る。</p><span class="real none">今日見せられる実物: なし</span></div>
+</section>
+
+<section>
+  <h2><span>05</span>やらない・言わないリスト</h2>
+  <ul class="ng">
+    <li><b>在留資格と医療の判断をAIにさせない</b><span>ビザの可否は入管と行政書士、症状の判断は医者の領域。AIは「窓口はここ」までで止める。</span></li>
+    <li><b>お客さんの個人情報をそのまま生成AIに貼らない</b><span>在留カード番号・パスポート番号・住所・病状は入れない。名前も伏せてから渡す。</span></li>
+    <li><b>裏取りしていない実績を数字で言わない</b><span>「何％増えた」は自分で測っていないなら口に出さない。見せるのは動いている画面だけ。</span></li>
+    <li><b>その場で契約や金額の話をしない</b><span>今日は診断。見積もりを出すと、次に会う理由が消える。</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2><span>06</span>締めの型（5分）</h2>
+  <div class="card">
+    <p><b>1. 今日の3分類をその場で読み上げる。</b></p>
+    <p class="note">AはURLを渡して終わり。BとCは口に出すだけで、持ち帰らせない。</p>
+  </div>
+  <div class="card">
+    <p><b>2. 次の一手を1つだけ決める。</b></p>
+    <p class="note">「明日どれからやりますか」と聞いて、選ばれた1つ以外は全部捨てる。2つ決めたら何も進まない。</p>
+  </div>
+  <div class="card">
+    <p><b>3. 宿題を相手に1つ、自分に1つ。</b></p>
+    <p class="note">相手の宿題は5分で終わることに限る。自分の宿題は期日を口で言う。<br>相手: <span style="border-bottom:1px solid var(--line);display:inline-block;min-width:140px">&nbsp;</span>　自分: <span style="border-bottom:1px solid var(--line);display:inline-block;min-width:140px">&nbsp;</span></p>
+  </div>
+  <div class="card">
+    <p><b>4. 教材のURLを渡して帰る。</b></p>
+    <p class="note">kyouzai.html。今日話した内容が英語で残るので、後から読み返せる。</p>
+  </div>
+</section>
+
+<footer>
+  ユウキ手元用。YUKAさんには見せない。渡すのは kyouzai.html と試作品のURLだけ。
+</footer>
+
+</div>
+<script>
+(function(){
+  function get(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function set(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  var P='japow_hearing_';
+  var boxes=[].slice.call(document.querySelectorAll('input[type=checkbox][data-k]'));
+  var areas=[].slice.call(document.querySelectorAll('textarea[data-k]'));
+  var count=document.getElementById('count'),fill=document.getElementById('fill');
+  function paint(){
+    var n=boxes.filter(function(b){return b.checked;}).length;
+    count.textContent=n+' / '+boxes.length+' 問';
+    fill.style.width=(n/boxes.length*100)+'%';
+  }
+  boxes.forEach(function(b){
+    if(get(P+b.dataset.k)==='1')b.checked=true;
+    b.addEventListener('change',function(){set(P+b.dataset.k,b.checked?'1':'0');paint();});
+  });
+  areas.forEach(function(t){
+    var v=get(P+t.dataset.k); if(v)t.value=v;
+    function fit(){t.style.height='auto';t.style.height=t.scrollHeight+'px';}
+    if(t.value)fit();
+    t.addEventListener('input',function(){set(P+t.dataset.k,t.value);fit();});
+  });
+  paint();
+})();
+</script>
+</body>
+</html>

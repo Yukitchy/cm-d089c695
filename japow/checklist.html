@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your first 7 days in Japan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#fbf9f6;--ink:#1c1c1c;--acc:#d6336c;--card:#fff;--sub:#5d5d5d}
+html,body{max-width:100%;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New",system-ui,sans-serif;font-weight:500;line-height:1.7;font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:560px;margin:0 auto;padding:36px 20px 56px}
+h1{font-size:28px;font-weight:900;line-height:1.35;margin-bottom:10px}
+.lead{font-size:15px;color:var(--sub);margin-bottom:22px}
+
+.prog{background:var(--card);border-radius:16px;padding:18px 20px;margin-bottom:18px}
+.prog .n{font-size:17px;font-weight:900;margin-bottom:10px}
+.bar{background:#ece8e2;border-radius:99px;height:10px;overflow:hidden}
+.bar i{display:block;background:var(--acc);height:100%;width:0;border-radius:99px;transition:width .2s}
+
+li{list-style:none}
+ul{display:flex;flex-direction:column;gap:10px}
+li label{display:flex;align-items:flex-start;gap:13px;background:var(--card);border-radius:16px;padding:18px;cursor:pointer}
+li input{width:23px;height:23px;margin-top:2px;flex:0 0 auto;accent-color:var(--acc)}
+.t,.h{display:block}
+.t{font-size:16px;font-weight:900;line-height:1.5}
+.h{font-size:14px;color:var(--sub);line-height:1.7;margin-top:4px}
+li input:checked ~ .txt .t{color:var(--sub);text-decoration:line-through}
+
+.btn{display:block;text-align:center;background:var(--acc);color:#fff;text-decoration:none;font-weight:900;font-size:17px;padding:17px 18px;border-radius:14px;margin-top:26px;line-height:1.45}
+.nw{white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Your first 7 days in Japan</h1>
+<p class="lead">Work down the list in order. Your ticks are saved on this phone.</p>
+
+<div class="prog"><div class="n" id="count">0 / 9 done</div><div class="bar"><i id="fill"></i></div></div>
+
+<ul id="list">
+  <li><label><input type="checkbox" data-k="d1"><span class="txt"><span class="t">1. Register your address at the city office</span><span class="h">Within 14 days of moving in. Bring your residence card and passport.</span></span></label></li>
+  <li><label><input type="checkbox" data-k="d2"><span class="txt"><span class="t">2. Get your My Number card application started</span><span class="h">The paper application arrives by mail after you register your address.</span></span></label></li>
+  <li><label><input type="checkbox" data-k="d3"><span class="txt"><span class="t">3. Join National Health Insurance</span><span class="h">Do this at the same city office, unless your employer covers you.</span></span></label></li>
+  <li><label><input type="checkbox" data-k="d4"><span class="txt"><span class="t">4. Get a SIM card or eSIM</span><span class="h">You need a Japanese phone number before the bank will talk to you.</span></span></label></li>
+  <li><label><input type="checkbox" data-k="d5"><span class="txt"><span class="t">5. Open a bank account</span><span class="h">Bring your residence card, phone number and address registration.</span></span></label></li>
+  <li><label><input type="checkbox" data-k="d6"><span class="txt"><span class="t">6. Set up Wise for money transfer</span><span class="h">Cheaper than a bank wire when you send money home or receive it.</span></span></label></li>
+  <li><label><input type="checkbox" data-k="d7"><span class="txt"><span class="t">7. Find your accommodation</span><span class="h">A share house is the fastest start if you have no guarantor yet.</span></span></label></li>
+  <li><label><input type="checkbox" data-k="d8"><span class="txt"><span class="t">8. Start job hunting</span><span class="h">Your résumé has to be in the Japanese format. It is a fixed layout.</span></span></label></li>
+  <li><label><input type="checkbox" data-k="d9"><span class="txt"><span class="t">9. Book a free orientation if stuck</span><span class="h">30 minutes, a Japan Life Guidebook, and your questions answered.</span></span></label></li>
+</ul>
+
+<a class="btn" href="https://www.instagram.com/japow.lifeinjapan/">Stuck? Book a FREE orientation<br>with JAPOW</a>
+
+</div>
+<script>
+var boxes=[].slice.call(document.querySelectorAll('#list input'));
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
+function paint(){
+  var n=boxes.filter(function(b){return b.checked;}).length;
+  document.getElementById('count').textContent=n+' / '+boxes.length+' done';
+  document.getElementById('fill').style.width=(n/boxes.length*100)+'%';
+}
+boxes.forEach(function(b){
+  if(store('japow_'+b.dataset.k)==='1')b.checked=true;
+  b.addEventListener('change',function(){store('japow_'+b.dataset.k,b.checked?'1':'0');paint();});
+});
+paint();
+</script>
+</body>
+</html>
