@@ -46,7 +46,12 @@ a{color:var(--blue)}
 .flow li b{display:inline-block;min-width:3.6em;color:var(--sub);font-size:12px}
 .flow li::before{content:"";position:absolute;left:8px;top:16px;width:6px;height:6px;border-radius:50%;background:var(--silver)}
 .human{background:#fff8e8;border-left:3px solid var(--orange);padding:10px 13px;font-size:13.5px;border-radius:0 6px 6px 0}
-.parts{font-size:13px;color:var(--sub);margin:0}
+.svc{list-style:none;margin:0;padding:0;font-size:13.5px}
+.svc li{padding:6px 0;border-bottom:1px dashed var(--silver)}
+.svc li:last-child{border-bottom:0}
+.svc a{font-weight:700;text-decoration:none;border-bottom:1px solid #b9d9ec}
+.svc a:hover{border-bottom-color:var(--blue)}
+.svc span{display:block;color:var(--sub);font-size:12.5px}
 
 .ask{margin-top:16px}
 .ask .box{background:#f3f6f8;border:1px solid #d6e2ea;border-radius:8px;padding:14px;font-size:13.5px;white-space:pre-wrap;line-height:1.65;font-family:"M PLUS 1p",monospace}
@@ -81,7 +86,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
     <li>Claude Code や ChatGPT など、手元のAIにそのまま貼る</li>
     <li>あとはAIの質問に答えていくと、あなたの環境用のものができます</li>
   </ol>
-  <p class="note">プログラミングの知識は要りません。ここに書いてあるのは全部「こういうことをしてほしい」という日本語の相談だけです。作る前に「今の自分の環境だと何が必要になる？」と聞くと、足りないものから教えてくれます。</p>
+  <p class="note"><b>コピーは全文を。</b>途中のURLも一緒に貼ってください。使うサービスを名指ししてある部分で、AIが勝手に別の作り方を選ぶのを防いでいます。<br>プログラミングの知識は要りません。ここに書いてあるのは全部「こういうことをしてほしい」という日本語の相談だけです。作る前に「今の自分の環境だと何が必要になる？」と聞くと、足りないものから教えてくれます。</p>
 </div>
 
 <div class="tool">
@@ -96,8 +101,11 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
   </ul>
   <h3>人間の仕事</h3>
   <p class="human">提案に「GO」を押す。効かなかった施策を台帳から外す。</p>
-  <h3>使っているもの</h3>
-  <p class="parts">Claude Code ／ 検索順位のデータ ／ 毎朝決まった時刻に動かす仕組み</p>
+  <h3>使うサービス</h3>
+  <ul class="svc">
+<li><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a><span>作業させるAI本体</span></li>
+<li><a href="https://search.google.com/search-console/about" target="_blank" rel="noopener">Google Search Console</a><span>検索の順位・クリック数の取得元。無料</span></li>
+</ul>
   <div class="ask">
     <h3>AIへの頼み方</h3>
     <div class="box">自分のサイトが検索でちゃんと見られているのか知りたいので、それが定期的に見られるダッシュボードを作ってほしいです。
@@ -105,7 +113,10 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
 そのうえで、毎朝あなたが自分で「今日直すならここ」を1〜2件選んで、私が「GO」と押したらサイトの修正から公開までやってくれる形にしてください。
 
 直したいことは一覧表にためていく形にして、効かなかったものは私が外せるようにしてください。
-まず、私の環境で何が必要になるか教えてください。</div>
+【使うサービスはこれです。勝手に別のものに置き換えないでください】
+・Google Search Console（検索の順位とクリック数の取得元・無料） https://search.google.com/search-console/about
+・作業はあなた（Claude Code / 手元のAI）が直接やる https://claude.com/claude-code
+まず、この構成で私の環境だと何が必要になるか教えてください。</div>
     <button class="copy">この文をコピー</button>
   </div>
 </div>
@@ -122,8 +133,12 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
   </ul>
   <h3>人間の仕事</h3>
   <p class="human">鳴った時だけ判断する。何もない日は何もしない。</p>
-  <h3>使っているもの</h3>
-  <p class="parts">メール ／ カレンダー ／ スマホの通知 ／ クラウドで動く仕組み（パソコンが寝ていても動きます）</p>
+  <h3>使うサービス</h3>
+  <ul class="svc">
+<li><a href="https://script.google.com/home" target="_blank" rel="noopener">Google Apps Script</a><span>Googleのサーバー側で動くので、自分のパソコンが寝ていても動く。無料</span></li>
+<li><a href="https://developers.google.com/apps-script/guides/triggers/installable" target="_blank" rel="noopener">時間主導型トリガー</a><span>5分おきに動かす設定。上のApps Scriptの機能</span></li>
+<li><a href="https://developers.line.biz/ja/services/messaging-api/" target="_blank" rel="noopener">LINE Messaging API</a><span>通知の送り先。無料枠あり</span></li>
+</ul>
   <div class="ask">
     <h3>AIへの頼み方</h3>
     <div class="box">複数の予約サイトで同じ商品を売っているので、ダブルブッキングが怖いです。
@@ -132,7 +147,13 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
 
 そのうえで、他の予定とぶつかる時だけスマホに通知してほしいです。ぶつからない日は何も通知しないでください。通知が多いと見なくなるので。
 
-パソコンを閉じている間も動いてほしいです。私の環境だとどうするのが良いか提案してください。</div>
+【使うサービスはこれです。勝手に別のものに置き換えないでください】
+・Google Apps Script（Google側で動くので自分のパソコンが寝ていても動く・無料） https://script.google.com/home
+・時間主導型トリガーで5分おきに実行 https://developers.google.com/apps-script/guides/triggers/installable
+・通知はLINE Messaging API https://developers.line.biz/ja/services/messaging-api/
+・予約メールの読み取りはGmail、書き込み先はGoogleカレンダー
+自分のパソコンに常駐させる方式は、閉じている間に止まるので選ばないでください。
+まず、この構成で私の環境だと何が必要になるか教えてください。</div>
     <button class="copy">この文をコピー</button>
   </div>
 </div>
@@ -149,8 +170,11 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
   </ul>
   <h3>人間の仕事</h3>
   <p class="human">ギャラリーのリンクをゲストに送る。</p>
-  <h3>使っているもの</h3>
-  <p class="parts">自宅に置いた古いパソコンと外付けハードディスク ／ そこで動く無料の写真管理アプリ ／ Claude Code</p>
+  <h3>使うサービス</h3>
+  <ul class="svc">
+<li><a href="https://immich.app/" target="_blank" rel="noopener">Immich</a><span>自宅のパソコンに置く写真管理。スマホから自動アップロード。無料・容量無制限（ハードディスク次第）</span></li>
+<li><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a><span>選別とページ作成をさせるAI本体</span></li>
+</ul>
   <div class="ask">
     <h3>AIへの頼み方</h3>
     <div class="box">仕事で撮った写真が1日に何百枚もあって、選別に時間がかかっています。
@@ -159,7 +183,13 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
 
 残った写真で、お客さんに渡せるギャラリーのページと、お礼のメッセージの下書きまで出してほしいです。
 
-写真はお客さんが写っているので、外部のサービスに送らず自分のパソコンの中だけで処理してください。私の環境で何が必要か教えてください。</div>
+写真にはお客さんが写っているので、外部のサービスに送らず自分のパソコンの中だけで処理してください。
+
+【使うサービスはこれです。勝手に別のものに置き換えないでください】
+・Immich（自宅のパソコンに置く写真管理。スマホから自動アップロード・無料） https://immich.app/
+・選別とページ作成はあなた（Claude Code / 手元のAI）がローカルでやる https://claude.com/claude-code
+GoogleフォトやiCloudなどのクラウドに上げる方式は選ばないでください。
+まず、この構成で私の環境だと何が必要になるか教えてください。</div>
     <button class="copy">この文をコピー</button>
   </div>
 </div>
@@ -176,8 +206,12 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
   </ul>
   <h3>人間の仕事</h3>
   <p class="human">写真と文章の最終確認。ここで「この言い回しはクサい」と却下していくと、だんだん好みを覚えます。</p>
-  <h3>使っているもの</h3>
-  <p class="parts">Instagramの公式の投稿の仕組み ／ スマホへの通知 ／ Claude Code</p>
+  <h3>使うサービス</h3>
+  <ul class="svc">
+<li><a href="https://developers.facebook.com/docs/instagram-platform" target="_blank" rel="noopener">Instagram Platform（公式API）</a><span>自動投稿の正規ルート。プロアカウントが必要。非公式の自動化はアカウント停止の危険あり</span></li>
+<li><a href="https://developers.line.biz/ja/services/messaging-api/" target="_blank" rel="noopener">LINE Messaging API</a><span>投稿前の「これでOK？」を送る先</span></li>
+<li><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a><span>組み立てと文章を書かせるAI本体</span></li>
+</ul>
   <div class="ask">
     <h3>AIへの頼み方</h3>
     <div class="box">お店（または仕事）の写真をInstagramに投稿するのが後回しになりがちです。
@@ -186,7 +220,13 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
 
 キャプションは3案出してください。そして投稿の前に必ずスマホに確認を送って、私がOKしたときだけ投稿するようにしてください。勝手に投稿はしないでください。
 
-文章の好みは私が却下していくので、それを覚えていってください。</div>
+文章の好みは私が却下していくので、それを覚えていってください。
+
+【使うサービスはこれです。勝手に別のものに置き換えないでください】
+・Instagram Platform（公式API。プロアカウントが必要） https://developers.facebook.com/docs/instagram-platform
+・確認の通知はLINE Messaging API https://developers.line.biz/ja/services/messaging-api/
+非公式の自動化ツールやブラウザ操作での投稿は、アカウント停止の危険があるので選ばないでください。
+まず、この構成で私の環境だと何が必要になるか教えてください。</div>
     <button class="copy">この文をコピー</button>
   </div>
 </div>
@@ -203,8 +243,12 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
   </ul>
   <h3>人間の仕事</h3>
   <p class="human">叩き台を見て、ゲストに返事を書く。ゲストへの送信はAIにさせない。</p>
-  <h3>使っているもの</h3>
-  <p class="parts">Claude Code ／ 地図 ／ ゲストのアンケートフォーム</p>
+  <h3>使うサービス</h3>
+  <ul class="svc">
+<li><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a><span>行程を考えてページを作るAI本体</span></li>
+<li><a href="https://www.google.com/forms/about/" target="_blank" rel="noopener">Googleフォーム</a><span>希望を受け取るアンケート。無料</span></li>
+<li><a href="https://developers.google.com/maps/documentation/urls/get-started" target="_blank" rel="noopener">Google Maps URLs</a><span>ルートの地図を埋め込む。この方式なら課金なし</span></li>
+</ul>
   <div class="ask">
     <h3>AIへの頼み方</h3>
     <div class="box">お客さんから「この日に案内してほしい」というふわっとした問い合わせが来ます。今は毎回、自分で候補を考えて文章で返していて時間がかかります。
@@ -213,7 +257,14 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
 
 案ごとに写真を数枚と、回るルートの地図をつけた1ページにまとめてください。お客さんはA・B・Cから選ぶだけ、という形にしたいです。
 
-お客さんへの送信はしないでください。最後は私が自分で送ります。</div>
+お客さんへの送信はしないでください。最後は私が自分で送ります。
+
+【使うサービスはこれです。勝手に別のものに置き換えないでください】
+・希望の受け取りはGoogleフォーム（無料） https://www.google.com/forms/about/
+・ルートの地図はGoogle Maps URLs（この方式なら課金なし） https://developers.google.com/maps/documentation/urls/get-started
+・行程を考えてページを作るのはあなた（Claude Code / 手元のAI） https://claude.com/claude-code
+地図APIの有料プランが必要になる方式は、先に私に確認してください。
+まず、この構成で私の環境だと何が必要になるか教えてください。</div>
     <button class="copy">この文をコピー</button>
   </div>
 </div>
@@ -230,8 +281,10 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
   </ul>
   <h3>人間の仕事</h3>
   <p class="human">やる案の番号を返すだけ。そこから先は実行までやってくれる。</p>
-  <h3>使っているもの</h3>
-  <p class="parts">AIの利用記録 ／ 週1回決まった時刻に動かす仕組み</p>
+  <h3>使うサービス</h3>
+  <ul class="svc">
+<li><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a><span>集計対象であり、改善を実行する本体でもある</span></li>
+</ul>
   <div class="ask">
     <h3>AIへの頼み方</h3>
     <div class="box">AIに色々やらせるようになって、使用量と料金が読めなくなってきました。
@@ -240,7 +293,13 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
 
 そのレポートには「ここは無駄だったので、こうすれば減らせます」という改善案を、番号つきで並べてください。私が番号で返事をしたら、その改善をあなたが実行する形にしてください。
 
-集計そのものにAIを使うと本末転倒なので、集計は普通のプログラムでやってください。</div>
+集計そのものにAIを使うと本末転倒なので、集計は普通のプログラムでやってください。
+
+【前提】
+・対象は私が使っているAI（Claude Code など） https://claude.com/claude-code
+・利用記録がどこに残っているかを、まずあなたが調べて私に教えてください
+・レポートは1枚のHTMLで、ブラウザで開ければ十分です
+まず、この構成で私の環境だと何が必要になるか教えてください。</div>
     <button class="copy">この文をコピー</button>
   </div>
 </div>
