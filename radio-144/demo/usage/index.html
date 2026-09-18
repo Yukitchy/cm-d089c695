@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI使用量の週次レポート（見本）｜#144</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../demo.css">
+<style>
+h3.sec{font-size:13px;color:var(--sub);letter-spacing:.04em;margin:0 0 10px}
+.sums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;background:#fff;border:1px solid var(--silver);border-radius:9px;overflow:hidden;margin-bottom:14px}
+.sum{padding:14px 16px;border-right:1px solid var(--silver)}
+.sum:last-child{border-right:0}
+.sum .t{font-size:12.5px;color:var(--sub)}
+.sum .n{font-size:28px;font-weight:900;line-height:1.2}
+.sum .d{font-size:11.5px;color:var(--sub)}
+.use{list-style:none;margin:0;padding:0;font-size:13.5px}
+.use li{padding:10px 0;border-bottom:1px dashed var(--silver);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.use li:last-child{border-bottom:0}
+.use .nm{flex:1;min-width:150px}
+.use .amt{font-weight:900;font-variant-numeric:tabular-nums}
+.use .pct{color:var(--sub);font-size:12px;min-width:3.4em;text-align:right}
+.use .bar{flex-basis:100%;height:5px;background:#efedea;border-radius:3px;overflow:hidden}
+.use .bar i{display:block;height:100%;background:#3b6fd4}
+.waste{list-style:none;margin:0;padding:0;counter-reset:w;font-size:13.5px}
+.waste li{padding:12px 0;border-bottom:1px dashed var(--silver);display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.waste li:last-child{border-bottom:0}
+.waste .no{counter-increment:w;font-weight:900;color:var(--red);min-width:1.4em}
+.waste .no::before{content:counter(w) "."}
+.waste .tx{flex:1;min-width:190px}
+.waste .tx small{display:block;color:var(--sub);font-size:12.5px;margin-top:3px}
+.note{font-size:13px;color:var(--sub);margin:12px 0 0}
+.note b{color:var(--ink)}
+</style></head>
+<body>
+
+<div class="demobar">
+  <span><b>これは見本です。</b>ボタンを押しても何も起きません。数字は全部ダミーです。</span>
+  <span class="spacer"></span>
+  <a href="../../">← #144のページに戻る</a>
+</div>
+
+<div class="wrap">
+  <h1 class="page-h1">AI使用量の週次レポート（見本）</h1>
+  <p class="page-lead">週に1回、何にどれだけAIを使ったかと、減らせそうなところが届きます。集計そのものは普通のプログラムでやるので、集計にAIは使いません。</p>
+
+  <div class="sums">
+    <div class="sum"><div class="t">今週つかった量</div><div class="n">1.2M</div><div class="d">9/15 - 9/21</div></div>
+    <div class="sum"><div class="t">先週比</div><div class="n">+8%</div><div class="d">先週 1.1M</div></div>
+    <div class="sum"><div class="t">セッション数</div><div class="n">120</div><div class="d">1日あたり 17</div></div>
+    <div class="sum"><div class="t">上限に対する消費率</div><div class="n">64%</div><div class="d">残り4日で 36%</div></div>
+  </div>
+
+  <div class="card">
+    <h3 class="sec">何に使ったか</h3>
+    <ul class="use">
+      <li><span class="nm">毎朝の記事チェック</span><span class="amt">390K</span><span class="pct">32%</span><span class="bar"><i style="width:32%"></i></span></li>
+      <li><span class="nm">写真の整理</span><span class="amt">260K</span><span class="pct">22%</span><span class="bar"><i style="width:22%"></i></span></li>
+      <li><span class="nm">問い合わせの下書き</span><span class="amt">210K</span><span class="pct">17%</span><span class="bar"><i style="width:17%"></i></span></li>
+      <li><span class="nm">行程案づくり</span><span class="amt">150K</span><span class="pct">13%</span><span class="bar"><i style="width:13%"></i></span></li>
+      <li><span class="nm">投稿文の作成</span><span class="amt">110K</span><span class="pct">9%</span><span class="bar"><i style="width:9%"></i></span></li>
+      <li><span class="nm">その他</span><span class="amt">80K</span><span class="pct">7%</span><span class="bar"><i style="width:7%"></i></span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="sec">無駄の疑い</h3>
+    <ul class="waste">
+      <li><span class="no"></span><span class="tx">毎朝動かしている記事チェックが、実質使われていない<small>先週の7回のうち、結果を開いたのは1回だけ。週3回に減らすと 約170K 減る見込み</small></span><button type="button" class="btn primary">実行</button></li>
+      <li><span class="no"></span><span class="tx">同じ調べ物を毎回やり直している<small>同じ内容の調査が今週5回。1回ぶんを保存して使い回すと 約90K 減る見込み</small></span><button type="button" class="btn primary">実行</button></li>
+      <li><span class="no"></span><span class="tx">重い作業を上限の近い時間帯に寄せている<small>夜にまとめて走らせているせいで詰まっている。昼へ移すだけで待ちが消える</small></span><button type="button" class="btn primary">実行</button></li>
+    </ul>
+    <p class="note"><b>やる番号を返信すると、そのまま実装まで進みます。</b>「1と3」と返すだけで、設定の書き換えまでやって、翌週のレポートで効いたかどうかが分かります。</p>
+  </div>
+
+  <div class="tail"><p>この画面をそのままAIに見せて「これと同じものを私の商売用に作って」と頼めます。</p></div>
+</div>
+</body></html>
