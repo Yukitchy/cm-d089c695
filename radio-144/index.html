@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>#144で話したAIツールの作り方</title>
+<meta name="description" content="ゼロからの体験ツアーガイドラジオ #144 で話した、ツアーガイドの仕事を自動化しているAI 6本。あなたのAIに貼ってそのまま作れます。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="#144で話したAIツールの作り方">
+<meta property="og:description" content="ツアーガイドの仕事を自動化しているAI 6本。頼み方をそのままコピーできます。">
+<meta property="og:url" content="https://menu.animesenseijp.com/radio-144/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700;900&family=Rubik:wght@800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1c1c1e;--sub:#5b5b60;--fog:#f6f4f1;--silver:#e3e0dc;--red:#e43024;--green:#2fa83c;--blue:#0084cc;--orange:#f4761f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fog);color:var(--ink);font-family:"M PLUS 1p","Hiragino Sans",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
+a{color:var(--blue)}
+
+.bar{background:var(--ink);color:#fff;padding:10px clamp(14px,3vw,24px);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bar .logo{font-family:"Rubik","M PLUS 1p",sans-serif;font-weight:800;font-size:16px}
+.bar .sub{font-size:12px;opacity:.72;font-weight:700}
+.bar .spacer{flex:1}
+.bar a{color:#fff;text-decoration:none;font-size:12px;font-weight:700;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;white-space:nowrap}
+.bar a:hover{background:#fff;color:var(--ink)}
+
+.wrap{max-width:820px;margin:0 auto;padding:0 clamp(14px,3vw,24px) 60px}
+.hero{padding:34px 0 22px}
+.hero h1{font-size:clamp(24px,5.2vw,34px);line-height:1.35}
+.hero p{color:var(--sub);font-size:15px;margin:14px 0 0}
+
+.howto{background:#fff;border:1px solid var(--silver);border-radius:10px;padding:20px;margin:6px 0 30px}
+.howto h2{font-size:16px;margin-bottom:10px}
+.howto ol{margin:0;padding-left:20px;font-size:14.5px}
+.howto li{margin:6px 0}
+.howto .note{font-size:13px;color:var(--sub);margin:12px 0 0;padding-top:12px;border-top:1px solid var(--silver)}
+
+.tool{background:#fff;border:1px solid var(--silver);border-radius:10px;padding:22px;margin-bottom:16px}
+.tool .no{font-family:"Rubik",sans-serif;font-weight:800;font-size:12px;color:var(--red);letter-spacing:.08em}
+.tool h2{font-size:clamp(18px,3.6vw,21px);margin:4px 0 10px}
+.tool .lead{font-size:14.5px;margin:0 0 16px}
+.tool h3{font-size:12.5px;color:var(--sub);letter-spacing:.04em;margin:16px 0 6px}
+.flow{list-style:none;margin:0;padding:0;font-size:14px}
+.flow li{padding:7px 0 7px 26px;position:relative;border-bottom:1px dashed var(--silver)}
+.flow li:last-child{border-bottom:0}
+.flow li b{display:inline-block;min-width:3.6em;color:var(--sub);font-size:12px}
+.flow li::before{content:"";position:absolute;left:8px;top:16px;width:6px;height:6px;border-radius:50%;background:var(--silver)}
+.human{background:#fff8e8;border-left:3px solid var(--orange);padding:10px 13px;font-size:13.5px;border-radius:0 6px 6px 0}
+.parts{font-size:13px;color:var(--sub);margin:0}
+
+.ask{margin-top:16px}
+.ask .box{background:#f3f6f8;border:1px solid #d6e2ea;border-radius:8px;padding:14px;font-size:13.5px;white-space:pre-wrap;line-height:1.65;font-family:"M PLUS 1p",monospace}
+.copy{margin-top:8px;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:7px 16px;font-size:12.5px;font-weight:700;font-family:inherit;cursor:pointer}
+.copy:hover{background:var(--red)}
+.copy.done{background:var(--green)}
+
+.tail{margin-top:34px;padding:22px;background:#fff;border:1px solid var(--silver);border-radius:10px;font-size:14px}
+.tail h2{font-size:16px;margin-bottom:8px}
+footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
+</style></head>
+<body>
+
+<div class="bar">
+  <span class="logo">Tour AI / #144</span>
+  <span class="sub">ゼロからの体験ツアーガイドラジオ</span>
+  <span class="spacer"></span>
+  <a href="https://bunko.yuukipodcast.com/tourguide/" target="_blank" rel="noopener">番組を聴く・読む</a>
+</div>
+
+<div class="wrap">
+
+<div class="hero">
+  <h1>#144で話した、ツアーの仕事をやってくれるAI 6本</h1>
+  <p>ラジオで「使い回せるものはリンクにして概要欄に載せます」と言ったやつです。秋葉原でアニメツアーをやっているユウキの現場で、実際に毎日動いているものだけを並べました。番組で話した6本だけです。</p>
+</div>
+
+<div class="howto">
+  <h2>使い方は、コピーして貼るだけ</h2>
+  <ol>
+    <li>気になったツールの「AIへの頼み方」をコピーする</li>
+    <li>Claude Code や ChatGPT など、手元のAIにそのまま貼る</li>
+    <li>あとはAIの質問に答えていくと、あなたの環境用のものができます</li>
+  </ol>
+  <p class="note">プログラミングの知識は要りません。ここに書いてあるのは全部「こういうことをしてほしい」という日本語の相談だけです。作る前に「今の自分の環境だと何が必要になる？」と聞くと、足りないものから教えてくれます。</p>
+</div>
+
+<div class="tool">
+  <div class="no">01</div>
+  <h2>毎朝ひとりでサイトを直すSEO担当</h2>
+  <p class="lead">自分のツアーサイトが検索でどう見られているかを毎朝しらべて、直すところを提案して、そのまま直して公開までやってくれます。人間がやるのは提案に「GO」を押すことだけです。</p>
+  <h3>流れ</h3>
+  <ul class="flow">
+    <li><b>入力</b> 直したいことをためた台帳（ただの一覧表）</li>
+    <li><b>処理</b> 毎朝、台帳から1〜2件を選んで、実際にサイトを書き換える</li>
+    <li><b>出力</b> 検索の順位やクリック数の推移が見えるダッシュボード</li>
+  </ul>
+  <h3>人間の仕事</h3>
+  <p class="human">提案に「GO」を押す。効かなかった施策を台帳から外す。</p>
+  <h3>使っているもの</h3>
+  <p class="parts">Claude Code ／ 検索順位のデータ ／ 毎朝決まった時刻に動かす仕組み</p>
+  <div class="ask">
+    <h3>AIへの頼み方</h3>
+    <div class="box">自分のサイトが検索でちゃんと見られているのか知りたいので、それが定期的に見られるダッシュボードを作ってほしいです。
+
+そのうえで、毎朝あなたが自分で「今日直すならここ」を1〜2件選んで、私が「GO」と押したらサイトの修正から公開までやってくれる形にしてください。
+
+直したいことは一覧表にためていく形にして、効かなかったものは私が外せるようにしてください。
+まず、私の環境で何が必要になるか教えてください。</div>
+    <button class="copy">この文をコピー</button>
+  </div>
+</div>
+
+<div class="tool">
+  <div class="no">02</div>
+  <h2>ダブルブッキングの見張り「かぶり番」</h2>
+  <p class="lead">複数の予約サイトで同じツアーを売っていると、片方で予約が入ったときにもう片方を閉じ忘れて事故ります。それを見張って、ぶつかる時だけ知らせてくれます。</p>
+  <h3>流れ</h3>
+  <ul class="flow">
+    <li><b>入力</b> 予約サイトから届く予約・変更・取消のメール</li>
+    <li><b>処理</b> 5分おきにメールを読んで、予約用のカレンダーに書き込む</li>
+    <li><b>出力</b> 他の予定とぶつかる時だけスマホに通知。ぶつからない日は何も鳴らない</li>
+  </ul>
+  <h3>人間の仕事</h3>
+  <p class="human">鳴った時だけ判断する。何もない日は何もしない。</p>
+  <h3>使っているもの</h3>
+  <p class="parts">メール ／ カレンダー ／ スマホの通知 ／ クラウドで動く仕組み（パソコンが寝ていても動きます）</p>
+  <div class="ask">
+    <h3>AIへの頼み方</h3>
+    <div class="box">複数の予約サイトで同じ商品を売っているので、ダブルブッキングが怖いです。
+
+予約サイトから届く「予約・変更・取消」のメールを5分おきに読んで、専用のカレンダーに自動で書き込む仕組みを作ってください。
+
+そのうえで、他の予定とぶつかる時だけスマホに通知してほしいです。ぶつからない日は何も通知しないでください。通知が多いと見なくなるので。
+
+パソコンを閉じている間も動いてほしいです。私の環境だとどうするのが良いか提案してください。</div>
+    <button class="copy">この文をコピー</button>
+  </div>
+</div>
+
+<div class="tool">
+  <div class="no">03</div>
+  <h2>ツアー写真の選別と、ゲストに渡すギャラリー</h2>
+  <p class="lead">ツアー中に撮った何百枚の写真から、使える写真だけを機械的に選びます。ゲストに渡すページと、お礼のメッセージまで一緒に出てきます。写真は自分のパソコンの中だけで処理していて、外部のAIには送っていません。</p>
+  <h3>流れ</h3>
+  <ul class="flow">
+    <li><b>入力</b> その日に撮った写真と動画（家に帰って同期するだけ）</li>
+    <li><b>処理</b> ブレ・明るさ・似た構図・写真としての良さで機械的に絞る</li>
+    <li><b>出力</b> ゲスト用のギャラリーページ、お礼のメッセージ、投稿用の文章の案</li>
+  </ul>
+  <h3>人間の仕事</h3>
+  <p class="human">ギャラリーのリンクをゲストに送る。</p>
+  <h3>使っているもの</h3>
+  <p class="parts">自宅に置いた古いパソコンと外付けハードディスク ／ そこで動く無料の写真管理アプリ ／ Claude Code</p>
+  <div class="ask">
+    <h3>AIへの頼み方</h3>
+    <div class="box">仕事で撮った写真が1日に何百枚もあって、選別に時間がかかっています。
+
+その日の写真から、ブレているもの・暗すぎるもの・似た構図のものを機械的に外して、使えるものだけを残す仕組みを作ってください。
+
+残った写真で、お客さんに渡せるギャラリーのページと、お礼のメッセージの下書きまで出してほしいです。
+
+写真はお客さんが写っているので、外部のサービスに送らず自分のパソコンの中だけで処理してください。私の環境で何が必要か教えてください。</div>
+    <button class="copy">この文をコピー</button>
+  </div>
+</div>
+
+<div class="tool">
+  <div class="no">04</div>
+  <h2>Instagramの投稿を組んで、確認だけ聞いてくる</h2>
+  <p class="lead">選んだ写真から10枚組の投稿を作り、文章とハッシュタグまで用意して、「これで出していいですか」とスマホに聞いてきます。OKすると投稿されます。</p>
+  <h3>流れ</h3>
+  <ul class="flow">
+    <li><b>入力</b> 03で選ばれた、その日の写真</li>
+    <li><b>処理</b> 1枚目にまとめ画像、間に写真、最後にツアーの案内という並びで10枚に組む</li>
+    <li><b>出力</b> 文章の案が3つ。スマホに確認が届き、OKすると投稿される</li>
+  </ul>
+  <h3>人間の仕事</h3>
+  <p class="human">写真と文章の最終確認。ここで「この言い回しはクサい」と却下していくと、だんだん好みを覚えます。</p>
+  <h3>使っているもの</h3>
+  <p class="parts">Instagramの公式の投稿の仕組み ／ スマホへの通知 ／ Claude Code</p>
+  <div class="ask">
+    <h3>AIへの頼み方</h3>
+    <div class="box">お店（または仕事）の写真をInstagramに投稿するのが後回しになりがちです。
+
+その日の写真から10枚組の投稿を自動で組んでください。1枚目はまとめ画像、最後の1〜2枚は自分の商品の案内を固定で入れたいです。
+
+キャプションは3案出してください。そして投稿の前に必ずスマホに確認を送って、私がOKしたときだけ投稿するようにしてください。勝手に投稿はしないでください。
+
+文章の好みは私が却下していくので、それを覚えていってください。</div>
+    <button class="copy">この文をコピー</button>
+  </div>
+</div>
+
+<div class="tool">
+  <div class="no">05</div>
+  <h2>ゲストの希望から、行程案を2〜3つ作る</h2>
+  <p class="lead">「東京で何か面白いことしたい」みたいなふわっとした問い合わせに、写真と地図つきの提案ページで返せるようになります。返信が早くて分かりやすいだけで、ゲストの反応が変わります。</p>
+  <h3>流れ</h3>
+  <ul class="flow">
+    <li><b>入力</b> ゲストの希望。アンケートの回答やメッセージの文面をそのまま渡すだけ</li>
+    <li><b>処理</b> 好みに合うルートを2〜3案。時間割・集合場所・回る順番まで組む</li>
+    <li><b>出力</b> 各案に写真が数枚と地図がついた提案ページ。昼食候補は営業日を確認した印つき</li>
+  </ul>
+  <h3>人間の仕事</h3>
+  <p class="human">叩き台を見て、ゲストに返事を書く。ゲストへの送信はAIにさせない。</p>
+  <h3>使っているもの</h3>
+  <p class="parts">Claude Code ／ 地図 ／ ゲストのアンケートフォーム</p>
+  <div class="ask">
+    <h3>AIへの頼み方</h3>
+    <div class="box">お客さんから「この日に案内してほしい」というふわっとした問い合わせが来ます。今は毎回、自分で候補を考えて文章で返していて時間がかかります。
+
+お客さんの希望の文面を貼るだけで、行程の案を2〜3つ作ってくれる仕組みを作ってください。各案に、時間割・集合場所・回る順番を入れてください。
+
+案ごとに写真を数枚と、回るルートの地図をつけた1ページにまとめてください。お客さんはA・B・Cから選ぶだけ、という形にしたいです。
+
+お客さんへの送信はしないでください。最後は私が自分で送ります。</div>
+    <button class="copy">この文をコピー</button>
+  </div>
+</div>
+
+<div class="tool">
+  <div class="no">06</div>
+  <h2>AIの使いすぎを週1で報告させる</h2>
+  <p class="lead">AIに仕事をさせるほど料金や上限が気になります。週に1回、何にどれだけ使ったかと、無駄になっている部分を報告させています。番組で話した「暴走コスト防衛」の自分版です。</p>
+  <h3>流れ</h3>
+  <ul class="flow">
+    <li><b>入力</b> 自分のAI利用の記録</li>
+    <li><b>処理</b> 週に1回、何にどれだけ使ったかを集計して、無駄を探す</li>
+    <li><b>出力</b> 使った量の一覧と、減らす案が番号つきで並んだレポート</li>
+  </ul>
+  <h3>人間の仕事</h3>
+  <p class="human">やる案の番号を返すだけ。そこから先は実行までやってくれる。</p>
+  <h3>使っているもの</h3>
+  <p class="parts">AIの利用記録 ／ 週1回決まった時刻に動かす仕組み</p>
+  <div class="ask">
+    <h3>AIへの頼み方</h3>
+    <div class="box">AIに色々やらせるようになって、使用量と料金が読めなくなってきました。
+
+週に1回、私が何にどれだけAIを使ったかを集計して、レポートにしてください。
+
+そのレポートには「ここは無駄だったので、こうすれば減らせます」という改善案を、番号つきで並べてください。私が番号で返事をしたら、その改善をあなたが実行する形にしてください。
+
+集計そのものにAIを使うと本末転倒なので、集計は普通のプログラムでやってください。</div>
+    <button class="copy">この文をコピー</button>
+  </div>
+</div>
+
+<div class="tail">
+  <h2>作ってみるときの、たった一つのコツ</h2>
+  <p>番組でも話しましたが、最初の指示はふわっとしたままで大丈夫です。実際にこのSEO担当を作ったときの一言目は「自分が作ったサイトをちゃんと検索されてるのか知りたいから、定期的にこういうものが見れるダッシュボードを作ってほしい」だけでした。専門用語も設計図も要りません。AIの方が詳しいので、足りないところは向こうから聞いてきます。</p>
+  <p style="margin-bottom:0">うまくいかない時は、できあがったものを見ながら「ここはこうじゃなくて、こう」と言い直してください。何度かやりとりすると、だんだん自分の好みを覚えていきます。</p>
+</div>
+
+<footer>ゼロからの体験ツアーガイドラジオ #144「AIで業務を劇的効率化！ガイドの自動化事例10選」</footer>
+
+</div>
+
+<script>
+document.querySelectorAll(".copy").forEach(function(b){
+  b.addEventListener("click", function(){
+    var t = b.previousElementSibling.textContent;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = "コピーしました";
+      b.classList.add("done");
+      setTimeout(function(){ b.textContent = "この文をコピー"; b.classList.remove("done"); }, 2000);
+    });
+  });
+});
+</script>
+</body></html>
