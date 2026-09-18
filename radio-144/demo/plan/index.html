@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>行程の叩き台（見本）｜#144</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../demo.css">
+<style>
+.tophead{background:var(--red);color:#fff;border-radius:10px;padding:13px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.tophead h1{font-size:clamp(17px,3.4vw,21px)}
+.tophead .sub{font-size:12px;opacity:.85;font-weight:700}
+.tophead .spacer{flex:1}
+.tophead .btn{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.5);color:#fff}
+.tabs{display:flex;gap:18px;border-bottom:1px solid var(--silver);margin-bottom:14px;font-size:13.5px;font-weight:700;flex-wrap:wrap}
+.tabs span{padding:8px 2px;color:var(--sub)}
+.tabs span.on{color:var(--red);box-shadow:inset 0 -2px 0 var(--red)}
+.cols{display:grid;grid-template-columns:250px 1fr;gap:12px;align-items:start}
+@media(max-width:720px){.cols{grid-template-columns:1fr}}
+.list{list-style:none;margin:0;padding:0;font-size:13px}
+.list li{padding:9px 0;border-bottom:1px dashed var(--silver);display:flex;gap:9px;align-items:baseline}
+.list li:last-child{border-bottom:0}
+.list li.on{background:#fdf5f4;margin:0 -8px;padding-left:8px;padding-right:8px;border-radius:6px}
+.list .d{font-size:11.5px;font-weight:700;color:var(--red);min-width:4.2em}
+.list .g{flex:1}
+.list .n{color:var(--sub);font-size:11.5px}
+h2.ttl{font-size:clamp(17px,3.2vw,21px);margin-bottom:2px}
+.meta{font-size:12.5px;color:var(--sub);margin:0 0 14px}
+h3.sec{font-size:13px;color:var(--sub);letter-spacing:.04em;margin:18px 0 7px}
+.sched{list-style:none;margin:0;padding:0;font-size:13.5px}
+.sched li{padding:8px 0 8px 0;border-bottom:1px dashed var(--silver);display:flex;gap:12px;align-items:baseline}
+.sched li:last-child{border-bottom:0}
+.sched .t{font-weight:700;font-variant-numeric:tabular-nums;min-width:5.2em;color:var(--ink)}
+.sched .w{flex:1}
+.sched .w small{display:block;color:var(--sub);font-size:12px}
+.lunch{list-style:none;margin:0;padding:0;font-size:13.5px}
+.lunch li{padding:8px 0;border-bottom:1px dashed var(--silver);display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.lunch li:last-child{border-bottom:0}
+.mark{font-weight:900;border-radius:5px;padding:1px 8px;font-size:12.5px}
+.mark.o{background:#eaf7ec;color:#1f7d2c}
+.mark.x{background:#fdeceb;color:#c0271c}
+.mark.t{background:#fff4e2;color:#a2610d}
+.lunch .m{color:var(--sub);font-size:12px;flex-basis:100%}
+.map{height:200px;margin-top:8px}
+.plans{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.note{font-size:12.5px;color:var(--sub);margin:12px 0 0}
+</style></head>
+<body>
+
+<div class="demobar">
+  <span><b>これは見本です。</b>ボタンを押しても何も起きません。数字は全部ダミーです。</span>
+  <span class="spacer"></span>
+  <a href="../../">← #144のページに戻る</a>
+</div>
+
+<div class="wrap">
+  <div class="tophead">
+    <h1>ツアー職人</h1><span class="sub">ガイド用 / 見本</span>
+    <span class="spacer"></span>
+    <button type="button" class="btn">＋ 新規ゲスト追加</button>
+  </div>
+  <div class="tabs"><span class="on">ツアー予定</span><span>ゲスト連絡先</span><span>アルバム</span></div>
+
+  <div class="cols">
+    <div class="card">
+      <h3 class="sec" style="margin-top:0">予定</h3>
+      <ul class="list">
+        <li class="on"><span class="d">9/28</span><span class="g">ゲストA<span class="n"> ／ 2名</span></span></li>
+        <li><span class="d">9/30</span><span class="g">ゲストB<span class="n"> ／ 4名</span></span></li>
+        <li><span class="d">10/02</span><span class="g">ゲストC<span class="n"> ／ 2名</span></span></li>
+        <li><span class="d">10/05</span><span class="g">ゲストD<span class="n"> ／ 1名</span></span></li>
+        <li><span class="d">10/09</span><span class="g">ゲストE<span class="n"> ／ 3名</span></span></li>
+      </ul>
+      <p class="note">名前・連絡先・予約内容は見本では出しません。</p>
+    </div>
+
+    <div class="card">
+      <h2 class="ttl">ゲストA ／ 2名 ／ 9/28(日)</h2>
+      <p class="meta">希望「はじめての東京。定番は少しでいいので、地元の人が行く道を歩きたい」／ 所要 6時間 ／ 英語</p>
+
+      <div class="plans">
+        <button type="button" class="btn primary">A案 下町をゆっくり</button>
+        <button type="button" class="btn">B案 渋谷と横丁</button>
+        <button type="button" class="btn">C案 食べ歩き多め</button>
+      </div>
+
+      <h3 class="sec">A案の時間割（叩き台）</h3>
+      <ul class="sched">
+        <li><span class="t">10:00</span><span class="w">浅草駅・改札の外で集合<small>目印が1つしかない出口を指定。写真を事前に送る</small></span></li>
+        <li><span class="t">10:15</span><span class="w">浅草寺と仲見世<small>混む前に。滞在45分</small></span></li>
+        <li><span class="t">11:15</span><span class="w">かっぱ橋道具街<small>包丁・食品サンプル。買い物の時間を長めに取る</small></span></li>
+        <li><span class="t">12:30</span><span class="w">昼食（下の候補から当日決める）<small>歩いて5分圏内で3軒押さえる</small></span></li>
+        <li><span class="t">13:45</span><span class="w">谷中銀座へ移動<small>電車2本・22分</small></span></li>
+        <li><span class="t">14:15</span><span class="w">谷中の路地と階段<small>ここが「地元の人が行く道」の本命</small></span></li>
+        <li><span class="t">15:30</span><span class="w">渋谷へ移動して解散<small>夕方の交差点を見て終わり</small></span></li>
+        <li><span class="t">16:00</span><span class="w">解散</span></li>
+      </ul>
+
+      <h3 class="sec">昼食の候補（営業日を確認した印つき）</h3>
+      <ul class="lunch">
+        <li><span class="mark o">営業◎</span><span>老舗の天ぷら屋（浅草）</span><span class="m">日曜も通し営業。2名なら並ばずに入れることが多い</span></li>
+        <li><span class="mark x">定休×</span><span>路地の蕎麦屋（かっぱ橋）</span><span class="m">日曜定休。今回は外す</span></li>
+        <li><span class="mark t">要確認△</span><span>商店街の定食屋（谷中）</span><span class="m">不定休。当日の朝に電話で確認する</span></li>
+      </ul>
+
+      <h3 class="sec">ルート地図</h3>
+      <div class="ph map">ここに地図が入ります</div>
+
+      <p class="note">ゲストへの返事は自分で書きます。この画面は叩き台を出すところまでです。</p>
+    </div>
+  </div>
+
+  <div class="tail"><p>この画面をそのままAIに見せて「これと同じものを私の商売用に作って」と頼めます。</p></div>
+</div>
+</body></html>

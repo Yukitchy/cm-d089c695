@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>写真の選別（見本）｜#144</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../demo.css">
+<style>
+.kicker{color:var(--red);font-size:12px;font-weight:700;letter-spacing:.14em}
+.intake{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0 18px}
+.intake input{flex:1;min-width:190px;border:1px solid var(--silver);border-radius:8px;padding:10px 13px;font-size:13px;font-family:inherit;background:#fff}
+.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;border-radius:9px 9px 0 0;overflow:hidden}
+.strip .ph{height:120px;border:0;border-radius:0;font-size:11px}
+.tcard{background:#fff;border:1px solid var(--silver);border-radius:10px;overflow:hidden}
+.tcard .body{padding:14px 16px 16px}
+.tcard .date{font-size:12.5px;color:var(--sub)}
+.tcard h2{font-size:clamp(19px,3.6vw,24px);margin:2px 0 4px}
+.count{font-size:13px;color:var(--sub);margin:0 0 12px}
+.count b{color:var(--ink)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.msg{border:1px solid #f0d6d3;background:#fdf5f4;border-radius:8px;padding:12px 14px;margin-bottom:12px}
+.msg .head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-weight:700;font-size:13.5px}
+.msg .head .spacer{flex:1}
+.msg p{font-size:13px;margin:9px 0 0;white-space:pre-wrap}
+.caps{border:1px solid var(--silver);background:#f7f6f4;border-radius:8px;padding:12px 14px}
+.caps h3{font-size:13.5px;margin-bottom:9px}
+.cap{background:#fff;border:1px solid var(--silver);border-radius:7px;padding:11px 13px;font-size:13px;margin-bottom:8px}
+.cap.pick{border-color:#8ec79a;background:#f4fbf5}
+.cap .tag{color:var(--sub);font-size:12px;display:block;margin-top:7px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;margin-top:10px}
+.gal .ph{height:86px;font-size:11px}
+@media(max-width:560px){.strip{grid-template-columns:repeat(3,1fr)}.strip .ph{height:88px}}
+</style></head>
+<body>
+
+<div class="demobar">
+  <span><b>これは見本です。</b>ボタンを押しても何も起きません。数字は全部ダミーです。</span>
+  <span class="spacer"></span>
+  <a href="../../">← #144のページに戻る</a>
+</div>
+
+<div class="wrap">
+  <div class="kicker">TOUR PHOTO CURATOR</div>
+  <h1 class="page-h1">写真の選別（見本）</h1>
+  <p class="page-lead">その日の写真を放り込むと、この画面ができます。ここでは写真そのものは載せず、入る場所だけを枠で示しています。</p>
+
+  <div class="intake">
+    <input type="text" placeholder="写真の共有リンクを貼る（見本なので効きません）" disabled>
+    <input type="text" placeholder="ツアー名（空欄=アルバム名を使う）" disabled>
+    <button type="button" class="btn primary">取り込み開始</button>
+  </div>
+
+  <div class="tcard">
+    <div class="strip">
+      <div class="ph">写真はここに入ります</div><div class="ph">写真</div><div class="ph">写真</div>
+      <div class="ph">写真</div><div class="ph">写真</div><div class="ph">写真</div>
+    </div>
+    <div class="body">
+      <div class="date">2026-09-11</div>
+      <h2>Tokyo Tour w/ ゲスト</h2>
+      <p class="count">写真<b>84枚</b> → ベスト<b>42枚</b> ・ 動画<b>7本</b> → <b>4本</b></p>
+
+      <div class="row">
+        <button type="button" class="btn primary">ギャラリー</button>
+        <button type="button" class="btn">公開ページ（ゲスト視点）</button>
+        <button type="button" class="btn">zip</button>
+        <button type="button" class="btn ghost">IG投稿しない</button>
+      </div>
+
+      <div class="msg">
+        <div class="head">✉ ゲストへ送るメッセージ<span class="spacer"></span>
+          <button type="button" class="btn">編集</button><button type="button" class="btn">コピー</button></div>
+        <p>Thank you for spending the day with me. Here are the photos from today — 42 of them, plus 4 short videos. The link stays up for 90 days, so download anything you want to keep.
+
+和訳: 今日は一緒に回ってくれてありがとうございました。今日の写真42枚と、短い動画4本です。リンクは90日間そのままなので、残したいものはダウンロードしてください。</p>
+      </div>
+
+      <div class="caps">
+        <h3>IGキャプション（3案）</h3>
+        <div class="cap pick">A day around the city with two guests. Started at the station, made a small handmade souvenir, walked a quiet shopping street, and finished with dessert. A full day, and a good one.
+          <span class="tag">和訳: ゲスト2人と街を1日。駅から始めて、小さな手作りのおみやげを作り、静かな商店街を歩いて、最後はデザート。まる1日、いい日でした。<br>#citytour #daytrip #localguide #walkingtour #sweets</span></div>
+        <div class="cap">今日は2人のゲストと1日。駅からスタートして、手作りのおみやげを作って、静かな商店街をのんびり歩いて、最後は甘いもので締め。歩数はけっこういきました。
+          <span class="tag">#街歩き #ガイド #日帰り #食べ歩き</span></div>
+        <div class="cap">「ガイドブックに載ってない道が見たい」と言われたので、そういう1日にしました。写真は42枚渡しました。
+          <span class="tag">#ツアーガイド #まち歩き #ローカル</span></div>
+      </div>
+
+      <div class="gal">
+        <div class="ph">写真はここに入ります</div><div class="ph">写真</div><div class="ph">写真</div><div class="ph">写真</div>
+        <div class="ph">写真</div><div class="ph">写真</div><div class="ph">写真</div><div class="ph">写真</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tail"><p>この画面をそのままAIに見せて「これと同じものを私の商売用に作って」と頼めます。</p></div>
+</div>
+</body></html>

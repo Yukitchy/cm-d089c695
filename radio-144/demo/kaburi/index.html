@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ダブルブッキングの見張り（見本）｜#144</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../demo.css">
+<style>
+.cols{display:grid;grid-template-columns:1fr 300px;gap:12px;align-items:start}
+@media(max-width:800px){.cols{grid-template-columns:1fr}}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:13px}
+th,td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--silver);white-space:nowrap}
+th{font-size:12px;color:var(--sub);font-weight:700;border-bottom:1px solid #c9c5c0}
+tr.hit td{background:#fdeceb}
+tr.hit td:first-child{box-shadow:inset 3px 0 0 var(--red)}
+.ch{display:inline-block;font-size:11.5px;font-weight:700;border-radius:5px;padding:2px 8px;background:#f3f2f0;color:var(--sub)}
+.badge{display:inline-block;font-size:11.5px;font-weight:900;border-radius:5px;padding:2px 8px;background:var(--red);color:#fff}
+.ok{color:#1f7d2c;font-weight:700;font-size:12.5px}
+h3.sec{font-size:13px;color:var(--sub);letter-spacing:.04em;margin:0 0 9px}
+.phone{background:#1c1c1e;border-radius:22px;padding:14px 12px 18px;color:#fff}
+.phone .top{text-align:center;font-size:11px;opacity:.55;margin-bottom:10px}
+.bubble{background:#2c2c2f;border-radius:14px;padding:12px 14px;font-size:13px;line-height:1.65}
+.bubble .app{font-size:11px;opacity:.6;font-weight:700;margin-bottom:6px}
+.bubble b{color:#ff8a80}
+.quiet{background:#2c2c2f;border-radius:14px;padding:12px 14px;font-size:12.5px;color:#9a9a9e;margin-top:8px;text-align:center}
+.note{font-size:13px;color:var(--sub);margin:12px 0 0}
+</style></head>
+<body>
+
+<div class="demobar">
+  <span><b>これは見本です。</b>ボタンを押しても何も起きません。数字は全部ダミーです。</span>
+  <span class="spacer"></span>
+  <a href="../../">← #144のページに戻る</a>
+</div>
+
+<div class="wrap">
+  <h1 class="page-h1">ダブルブッキングの見張り（見本）</h1>
+  <p class="page-lead">複数の予約サイトから届く予約メールを読んで、1本のカレンダーにまとめた画面です。ぶつかる時だけスマホが鳴ります。</p>
+
+  <div class="cols">
+    <div class="card">
+      <h3 class="sec">予約の一覧（見本）</h3>
+      <div class="tw">
+      <table>
+        <tr><th>販路</th><th>日付</th><th>時間</th><th>人数</th><th>ゲスト</th><th>状態</th></tr>
+        <tr><td><span class="ch">Viator</span></td><td>9/26(金)</td><td>13:00-17:00</td><td>2名</td><td>ゲストA</td><td class="ok">確定</td></tr>
+        <tr><td><span class="ch">Airbnb</span></td><td>9/27(土)</td><td>10:00-14:00</td><td>4名</td><td>ゲストB</td><td class="ok">確定</td></tr>
+        <tr class="hit"><td><span class="ch">Viator</span></td><td>9/28(日)</td><td>10:00-14:00</td><td>2名</td><td>ゲストC</td><td><span class="badge">ぶつかっています</span></td></tr>
+        <tr class="hit"><td><span class="ch">GetYourGuide</span></td><td>9/28(日)</td><td>11:00-15:00</td><td>3名</td><td>ゲストD</td><td><span class="badge">ぶつかっています</span></td></tr>
+        <tr><td><span class="ch">GetYourGuide</span></td><td>9/30(火)</td><td>09:30-13:30</td><td>1名</td><td>ゲストE</td><td class="ok">確定</td></tr>
+        <tr><td><span class="ch">Airbnb</span></td><td>10/02(木)</td><td>14:00-18:00</td><td>2名</td><td>ゲストF</td><td class="ok">確定</td></tr>
+        <tr><td><span class="ch">Viator</span></td><td>10/05(日)</td><td>10:00-14:00</td><td>5名</td><td>ゲストG</td><td class="ok">確定</td></tr>
+      </table>
+      </div>
+      <p class="note">赤い2行だけが重なっています。9/28の10:00-14:00と11:00-15:00で、3時間かぶっています。どちらかを動かすまで、この行は赤いままです。</p>
+    </div>
+
+    <div class="card">
+      <h3 class="sec">スマホに届く通知（見本）</h3>
+      <div class="phone">
+        <div class="top">今 ・ 通知</div>
+        <div class="bubble">
+          <div class="app">見張り</div>
+          <b>🚨 予定がぶつかっています</b><br>
+          9/28(日) 10:00-14:00 で新しい予約が入りました。<br>
+          同じ時間に別の予定が入っています。<br>
+          どちらかを動かしてください。
+        </div>
+        <div class="quiet">ぶつからない日は、ここに何も届きません</div>
+      </div>
+      <p class="note">毎回通知が来る作りにすると見なくなるので、鳴るのは重なった時だけです。何も届かない日は、何も起きていないということです。</p>
+    </div>
+  </div>
+
+  <div class="tail"><p>この画面をそのままAIに見せて「これと同じものを私の商売用に作って」と頼めます。</p></div>
+</div>
+</body></html>

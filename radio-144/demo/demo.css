@@ -1,0 +1,30 @@
+:root{--ink:#1c1c1e;--sub:#5b5b60;--fog:#f6f4f1;--silver:#e3e0dc;--red:#e43024;--green:#2fa83c;--blue:#0084cc;--orange:#f4761f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fog);color:var(--ink);font-family:"M PLUS 1p","Hiragino Sans",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"M PLUS 1p";font-weight:900;letter-spacing:-.01em;margin:0}
+a{color:var(--blue)}
+
+/* 見本の帯 */
+.demobar{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;padding:9px clamp(12px,3vw,20px);display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;font-size:12.5px;line-height:1.5}
+.demobar b{color:#ffd9d6;font-weight:700}
+.demobar .spacer{flex:1}
+.demobar a{color:#fff;text-decoration:none;font-weight:700;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:4px 13px;white-space:nowrap}
+.demobar a:hover{background:#fff;color:var(--ink)}
+
+.wrap{max-width:980px;margin:0 auto;padding:22px clamp(12px,3vw,20px) 56px}
+.page-h1{font-size:clamp(21px,4.4vw,28px);margin:0 0 4px}
+.page-lead{color:var(--sub);font-size:13px;margin:0 0 20px}
+
+.card{background:#fff;border:1px solid var(--silver);border-radius:10px;padding:16px;margin-bottom:14px}
+
+/* 押しても何も起きないボタン */
+button{font-family:inherit;cursor:default}
+.btn{background:#fff;border:1px solid var(--silver);border-radius:7px;padding:7px 14px;font-size:12.5px;font-weight:700;color:var(--ink)}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn.ghost{background:#f3f2f0}
+.btn:hover{outline:1px dashed var(--silver)}
+
+.ph{background:repeating-linear-gradient(135deg,#eceae7,#eceae7 9px,#e3e0dc 9px,#e3e0dc 18px);border:1px dashed #c9c5c0;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#8a857f;font-size:12px;font-weight:700;text-align:center;padding:10px}
+
+.tail{margin-top:26px;padding:16px 18px;background:#fff;border:1px solid var(--silver);border-radius:10px;font-size:13.5px}
+.tail p{margin:0}
