@@ -53,6 +53,12 @@ a{color:var(--blue)}
 .svc a:hover{border-bottom-color:var(--blue)}
 .svc span{display:block;color:var(--sub);font-size:12.5px}
 
+.out{margin:10px 0 0;padding:0}
+.out img{width:100%;display:block;border:1px solid var(--silver);border-radius:8px}
+.out figcaption{font-size:12.5px;color:var(--sub);margin-top:7px;line-height:1.55}
+.outlink{font-size:13.5px;margin:9px 0 0}
+.outnote{font-size:13.5px;margin:9px 0 0;color:var(--sub)}
+.mock{margin-top:9px;background:#1c1c1e;color:#f2f2f2;border-radius:8px;padding:13px 15px;font-size:13px;white-space:pre-wrap;line-height:1.7}
 .ask{margin-top:16px}
 .ask .box{background:#f3f6f8;border:1px solid #d6e2ea;border-radius:8px;padding:14px;font-size:13.5px;white-space:pre-wrap;line-height:1.65;font-family:"M PLUS 1p",monospace}
 .copy{margin-top:8px;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:7px 16px;font-size:12.5px;font-weight:700;font-family:inherit;cursor:pointer}
@@ -86,13 +92,17 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
     <li>Claude Code や ChatGPT など、手元のAIにそのまま貼る</li>
     <li>あとはAIの質問に答えていくと、あなたの環境用のものができます</li>
   </ol>
-  <p class="note"><b>コピーは全文を。</b>途中のURLも一緒に貼ってください。使うサービスを名指ししてある部分で、AIが勝手に別の作り方を選ぶのを防いでいます。<br>プログラミングの知識は要りません。ここに書いてあるのは全部「こういうことをしてほしい」という日本語の相談だけです。作る前に「今の自分の環境だと何が必要になる？」と聞くと、足りないものから教えてくれます。</p>
+  <p class="note"><b>まず「できあがるもの」を見てください。</b>各ツールに実物の画面かリンクを付けました。自分の商売に置き換えられそうなものだけ、下の頼み方をコピーすれば十分です。<br><b>コピーは全文を。</b>途中のURLも一緒に貼ってください。使うサービスを名指ししてある部分で、AIが勝手に別の作り方を選ぶのを防いでいます。<br>プログラミングの知識は要りません。ここに書いてあるのは全部「こういうことをしてほしい」という日本語の相談だけです。作る前に「今の自分の環境だと何が必要になる？」と聞くと、足りないものから教えてくれます。</p>
 </div>
 
 <div class="tool">
   <div class="no">01</div>
   <h2>毎朝ひとりでサイトを直すSEO担当</h2>
   <p class="lead">自分のツアーサイトが検索でどう見られているかを毎朝しらべて、直すところを提案して、そのまま直して公開までやってくれます。人間がやるのは提案に「GO」を押すことだけです。</p>
+  <h3>できあがるもの</h3>
+<figure class="out"><img src="img/shot-seo-rank.jpg" alt="順位表の画面。提案が7件並び、右上に全部GOのボタンがある" loading="lazy">
+<figcaption>毎朝これが更新される。上の「全部GO」を押すと、提案どおりにサイトが直る。</figcaption></figure>
+<p class="outlink">直され続けている実物のサイト → <a href="https://animesenseijp.com/" target="_blank" rel="noopener">animesenseijp.com</a></p>
   <h3>流れ</h3>
   <ul class="flow">
     <li><b>入力</b> 直したいことをためた台帳（ただの一覧表）</li>
@@ -125,6 +135,13 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
   <div class="no">02</div>
   <h2>ダブルブッキングの見張り「かぶり番」</h2>
   <p class="lead">複数の予約サイトで同じツアーを売っていると、片方で予約が入ったときにもう片方を閉じ忘れて事故ります。それを見張って、ぶつかる時だけ知らせてくれます。</p>
+  <h3>できあがるもの</h3>
+<p class="outnote">出来上がるのは<b>あなた専用のカレンダーとスマホ通知</b>なので、公開できる実物がありません。届くのはこういう形です。</p>
+<div class="mock">🚨 予定がぶつかっています
+9/28(日) 10:00-14:00 で新しい予約が入りました。
+同じ時間に別の予定が入っています。
+どちらかを動かしてください。</div>
+<p class="outnote">ぶつからない日は何も届きません。ここが肝心で、毎回通知が来る作りにすると見なくなります。</p>
   <h3>流れ</h3>
   <ul class="flow">
     <li><b>入力</b> 予約サイトから届く予約・変更・取消のメール</li>
@@ -162,6 +179,9 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:26px 0 0}
   <div class="no">03</div>
   <h2>ツアー写真の選別と、ゲストに渡すギャラリー</h2>
   <p class="lead">ツアー中に撮った何百枚の写真から、使える写真だけを機械的に選びます。ゲストに渡すページと、お礼のメッセージまで一緒に出てきます。写真は自分のパソコンの中だけで処理していて、外部のAIには送っていません。</p>
+  <h3>できあがるもの</h3>
+<figure class="out"><img src="img/shot-photo-dashboard.jpg" alt="写真選別の画面。写真84枚からベスト42枚、動画7本から4本に絞られ、ゲストへのメッセージと投稿文の案が並んでいる" loading="lazy">
+<figcaption>その日の写真を放り込むとこうなる。ギャラリー・ゲストへのお礼文・投稿文の案が一度に出る。ゲストの写真と名前は伏せてあります。</figcaption></figure>
   <h3>流れ</h3>
   <ul class="flow">
     <li><b>入力</b> その日に撮った写真と動画（家に帰って同期するだけ）</li>
@@ -198,6 +218,9 @@ GoogleフォトやiCloudなどのクラウドに上げる方式は選ばない�
   <div class="no">04</div>
   <h2>Instagramの投稿を組んで、確認だけ聞いてくる</h2>
   <p class="lead">選んだ写真から10枚組の投稿を作り、文章とハッシュタグまで用意して、「これで出していいですか」とスマホに聞いてきます。OKすると投稿されます。</p>
+  <h3>できあがるもの</h3>
+<p class="outlink">実際に投稿されたもの → <a href="https://www.instagram.com/p/Dc3Dg4WE5q-/" target="_blank" rel="noopener">この投稿</a> ／ <a href="https://www.instagram.com/yukianimesensei/" target="_blank" rel="noopener">アカウント</a></p>
+<p class="outlink">AIが最初に書いた文と、却下して直させた後の文の比べ → <a href="https://menu.animesenseijp.com/tour-ai/ig-honbun.html" target="_blank" rel="noopener">ビフォーアフター</a></p>
   <h3>流れ</h3>
   <ul class="flow">
     <li><b>入力</b> 03で選ばれた、その日の写真</li>
@@ -235,6 +258,9 @@ GoogleフォトやiCloudなどのクラウドに上げる方式は選ばない�
   <div class="no">05</div>
   <h2>ゲストの希望から、行程案を2〜3つ作る</h2>
   <p class="lead">「東京で何か面白いことしたい」みたいなふわっとした問い合わせに、写真と地図つきの提案ページで返せるようになります。返信が早くて分かりやすいだけで、ゲストの反応が変わります。</p>
+  <h3>できあがるもの</h3>
+<figure class="out"><img src="img/shot-akiba-tour-shokunin.jpg" alt="行程の叩き台が出る画面。左に予定の一覧、右に当日の行程と昼食候補が並んでいる" loading="lazy">
+<figcaption>アンケートが届くとこの画面に叩き台が出る。ゲストの情報はぼかしてあります。ここから選んで、返事は自分で書く。</figcaption></figure>
   <h3>流れ</h3>
   <ul class="flow">
     <li><b>入力</b> ゲストの希望。アンケートの回答やメッセージの文面をそのまま渡すだけ</li>
@@ -273,6 +299,17 @@ GoogleフォトやiCloudなどのクラウドに上げる方式は選ばない�
   <div class="no">06</div>
   <h2>AIの使いすぎを週1で報告させる</h2>
   <p class="lead">AIに仕事をさせるほど料金や上限が気になります。週に1回、何にどれだけ使ったかと、無駄になっている部分を報告させています。番組で話した「暴走コスト防衛」の自分版です。</p>
+  <h3>できあがるもの</h3>
+<p class="outnote">自分のパソコンで開くだけのページなので公開していません。中身はこの形です。</p>
+<div class="mock">今週つかった量: ◯◯（先週比 +◯%）
+何に使ったか: 上から順に一覧
+
+無駄の疑い
+1. 毎朝動かしている◯◯が、実質使われていない
+2. 同じ調べ物を毎回やり直している
+3. 重い作業を上限の近い時間帯に寄せている
+
+やる番号を返信 → そのまま実装まで進む</div>
   <h3>流れ</h3>
   <ul class="flow">
     <li><b>入力</b> 自分のAI利用の記録</li>
