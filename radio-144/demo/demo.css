@@ -15,7 +15,7 @@ a{color:var(--blue)}
 .page-h1{font-size:clamp(21px,4.4vw,28px);margin:0 0 4px}
 .page-lead{color:var(--sub);font-size:13px;margin:0 0 20px}
 
-.card{background:#fff;border:1px solid var(--silver);border-radius:10px;padding:16px;margin-bottom:14px}
+.card{background:#fff;border:1px solid var(--silver);border-radius:10px;padding:16px;margin-bottom:14px;min-width:0}
 
 /* 押しても何も起きないボタン */
 button{font-family:inherit;cursor:default}
